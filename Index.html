@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LNL Solutions LLC — AI Integration & Growth Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080a0f;
+  --dark: #0d1117;
+  --card: #111620;
+  --border: #1e2a3a;
+  --gold: #c9a84c;
+  --gold2: #e8c97a;
+  --white: #f0f4f8;
+  --muted: #6b7f96;
+  --accent: #1a8cff;
+  --bebas: 'Bebas Neue', sans-serif;
+  --dm: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–black);
+color: var(–white);
+font-family: var(–dm);
+overflow-x: hidden;
+line-height: 1.6;
+}
+
+/* Noise texture overlay */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’ opacity=‘0.04’/%3E%3C/svg%3E”);
+pointer-events: none;
+z-index: 9999;
+opacity: 0.4;
+}
+
+/* NAV */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 60px;
+background: rgba(8,10,15,0.85);
+backdrop-filter: blur(20px);
+border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+
+.nav-logo {
+display: flex;
+flex-direction: column;
+gap: 1px;
+}
+
+.nav-logo-main {
+font-family: var(–bebas);
+font-size: 26px;
+letter-spacing: 3px;
+color: var(–white);
+line-height: 1;
+}
+
+.nav-logo-sub {
+font-family: var(–mono);
+font-size: 9px;
+color: var(–gold);
+letter-spacing: 3px;
+text-transform: uppercase;
+}
+
+.nav-links {
+display: flex;
+align-items: center;
+gap: 40px;
+list-style: none;
+}
+
+.nav-links a {
+font-family: var(–dm);
+font-size: 13px;
+font-weight: 500;
+color: var(–muted);
+text-decoration: none;
+letter-spacing: 0.5px;
+transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(–white); }
+
+.nav-cta {
+background: var(–gold);
+color: var(–black) !important;
+padding: 10px 24px;
+border-radius: 4px;
+font-weight: 700 !important;
+transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(–gold2) !important; color: var(–black) !important; }
+
+/* HERO */
+.hero {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 120px 60px 80px;
+position: relative;
+overflow: hidden;
+}
+
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 60%),
+radial-gradient(ellipse 60% 40% at 20% 80%, rgba(26,140,255,0.05) 0%, transparent 50%),
+radial-gradient(ellipse 40% 30% at 80% 60%, rgba(201,168,76,0.04) 0%, transparent 50%);
+}
+
+.hero-grid {
+position: absolute;
+inset: 0;
+background-image:
+linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+background-size: 60px 60px;
+mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 70%);
+}
+
+.hero-tag {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(201,168,76,0.08);
+border: 1px solid rgba(201,168,76,0.25);
+border-radius: 100px;
+padding: 6px 16px;
+font-family: var(–mono);
+font-size: 11px;
+color: var(–gold);
+letter-spacing: 2px;
+margin-bottom: 32px;
+animation: fadeUp 0.8s ease both;
+}
+
+.hero-tag::before {
+content: ‘’;
+width: 6px; height: 6px;
+border-radius: 50%;
+background: var(–gold);
+animation: pulse 2s infinite;
+}
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.hero h1 {
+font-family: var(–bebas);
+font-size: clamp(64px, 10vw, 140px);
+line-height: 0.92;
+letter-spacing: 4px;
+color: var(–white);
+margin-bottom: 8px;
+animation: fadeUp 0.8s 0.1s ease both;
+}
+
+.hero h1 span {
+background: linear-gradient(135deg, var(–gold), var(–gold2), var(–gold));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.hero-sub {
+font-family: var(–bebas);
+font-size: clamp(28px, 4vw, 52px);
+letter-spacing: 6px;
+color: var(–muted);
+margin-bottom: 32px;
+animation: fadeUp 0.8s 0.2s ease both;
+}
+
+.hero p {
+max-width: 600px;
+font-size: 18px;
+font-weight: 300;
+color: var(–muted);
+line-height: 1.7;
+margin: 0 auto 48px;
+animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hero-btns {
+display: flex;
+gap: 16px;
+justify-content: center;
+flex-wrap: wrap;
+animation: fadeUp 0.8s 0.4s ease both;
+}
+
+.btn-primary {
+background: var(–gold);
+color: var(–black);
+padding: 16px 36px;
+border-radius: 4px;
+font-family: var(–dm);
+font-size: 14px;
+font-weight: 700;
+text-decoration: none;
+letter-spacing: 1px;
+transition: all 0.2s;
+border: none;
+cursor: pointer;
+}
+
+.btn-primary:hover { background: var(–gold2); transform: translateY(-2px); }
+
+.btn-secondary {
+background: transparent;
+color: var(–white);
+padding: 16px 36px;
+border-radius: 4px;
+font-family: var(–dm);
+font-size: 14px;
+font-weight: 500;
+text-decoration: none;
+letter-spacing: 1px;
+border: 1px solid var(–border);
+transition: all 0.2s;
+}
+
+.btn-secondary:hover { border-color: var(–gold); color: var(–gold); }
+
+.hero-stats {
+display: flex;
+gap: 60px;
+justify-content: center;
+margin-top: 80px;
+padding-top: 60px;
+border-top: 1px solid var(–border);
+width: 100%;
+max-width: 700px;
+animation: fadeUp 0.8s 0.5s ease both;
+}
+
+.hero-stat-num {
+font-family: var(–bebas);
+font-size: 48px;
+letter-spacing: 2px;
+color: var(–gold);
+line-height: 1;
+}
+
+.hero-stat-lbl {
+font-family: var(–mono);
+font-size: 10px;
+color: var(–muted);
+letter-spacing: 2px;
+margin-top: 4px;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTIONS */
+section {
+padding: 100px 60px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.section-tag {
+font-family: var(–mono);
+font-size: 10px;
+color: var(–gold);
+letter-spacing: 3px;
+text-transform: uppercase;
+margin-bottom: 16px;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.section-tag::before {
+content: ‘’;
+display: block;
+width: 30px;
+height: 1px;
+background: var(–gold);
+}
+
+.section-title {
+font-family: var(–bebas);
+font-size: clamp(42px, 6vw, 72px);
+letter-spacing: 3px;
+line-height: 0.95;
+margin-bottom: 20px;
+}
+
+.section-title span { color: var(–gold); }
+
+.section-body {
+font-size: 17px;
+font-weight: 300;
+color: var(–muted);
+max-width: 560px;
+line-height: 1.75;
+}
+
+/* WHAT WE DO */
+.what-layout {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 80px;
+align-items: center;
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2px;
+}
+
+.service-card {
+background: var(–card);
+padding: 28px 24px;
+border: 1px solid var(–border);
+transition: all 0.3s;
+cursor: default;
+}
+
+.service-card:hover {
+border-color: rgba(201,168,76,0.3);
+background: #141c28;
+}
+
+.service-card:first-child { border-radius: 8px 0 0 0; }
+.service-card:nth-child(2) { border-radius: 0 8px 0 0; }
+.service-card:nth-child(3) { border-radius: 0 0 0 8px; }
+.service-card:last-child { border-radius: 0 0 8px 0; }
+
+.service-icon {
+font-size: 28px;
+margin-bottom: 12px;
+}
+
+.service-name {
+font-family: var(–bebas);
+font-size: 22px;
+letter-spacing: 1px;
+color: var(–white);
+margin-bottom: 8px;
+}
+
+.service-desc {
+font-size: 13px;
+color: var(–muted);
+line-height: 1.6;
+}
+
+/* WHO WE SERVE */
+.clients-full { max-width: 1200px; margin: 0 auto; padding: 0 60px 100px; }
+
+.clients-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+margin-top: 60px;
+}
+
+.client-card {
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: 8px;
+padding: 36px 28px;
+position: relative;
+overflow: hidden;
+transition: all 0.3s;
+}
+
+.client-card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(–gold), transparent);
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.client-card:hover {
+border-color: rgba(201,168,76,0.25);
+transform: translateY(-4px);
+}
+
+.client-card:hover::before { opacity: 1; }
+
+.client-icon {
+font-size: 36px;
+margin-bottom: 16px;
+}
+
+.client-title {
+font-family: var(–bebas);
+font-size: 24px;
+letter-spacing: 1px;
+color: var(–white);
+margin-bottom: 10px;
+}
+
+.client-desc {
+font-size: 14px;
+color: var(–muted);
+line-height: 1.65;
+}
+
+/* HOW IT WORKS */
+.process-full { max-width: 1200px; margin: 0 auto; padding: 0 60px 100px; }
+
+.process-steps {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 0;
+margin-top: 60px;
+position: relative;
+}
+
+.process-steps::before {
+content: ‘’;
+position: absolute;
+top: 40px;
+left: 12.5%;
+right: 12.5%;
+height: 1px;
+background: linear-gradient(90deg, transparent, var(–gold), var(–gold), var(–gold), transparent);
+opacity: 0.3;
+}
+
+.step {
+text-align: center;
+padding: 0 20px;
+position: relative;
+}
+
+.step-num {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+background: var(–card);
+border: 1px solid var(–border);
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: var(–bebas);
+font-size: 32px;
+color: var(–gold);
+margin: 0 auto 24px;
+position: relative;
+z-index: 1;
+}
+
+.step-title {
+font-family: var(–bebas);
+font-size: 20px;
+letter-spacing: 1px;
+color: var(–white);
+margin-bottom: 10px;
+}
+
+.step-desc {
+font-size: 13px;
+color: var(–muted);
+line-height: 1.6;
+}
+
+/* 5TH APP FEATURE */
+.app-section {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 60px 100px;
+}
+
+.app-showcase {
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: 12px;
+padding: 60px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
+position: relative;
+overflow: hidden;
+}
+
+.app-showcase::before {
+content: ‘’;
+position: absolute;
+top: -100px; right: -100px;
+width: 400px; height: 400px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+}
+
+.app-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(201,168,76,0.1);
+border: 1px solid rgba(201,168,76,0.3);
+border-radius: 4px;
+padding: 6px 14px;
+font-family: var(–mono);
+font-size: 10px;
+color: var(–gold);
+letter-spacing: 2px;
+margin-bottom: 20px;
+}
+
+.app-title {
+font-family: var(–bebas);
+font-size: 56px;
+letter-spacing: 4px;
+color: var(–white);
+line-height: 0.95;
+margin-bottom: 20px;
+}
+
+.app-title span { color: var(–gold); }
+
+.app-desc {
+font-size: 16px;
+color: var(–muted);
+line-height: 1.75;
+margin-bottom: 32px;
+}
+
+.app-features {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.app-feature {
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 14px;
+color: var(–muted);
+}
+
+.app-feature::before {
+content: ‘→’;
+color: var(–gold);
+font-family: var(–mono);
+flex-shrink: 0;
+}
+
+.app-visual {
+background: #080a0f;
+border: 1px solid var(–border);
+border-radius: 8px;
+padding: 24px;
+font-family: var(–mono);
+font-size: 12px;
+color: var(–muted);
+line-height: 2;
+}
+
+.av-line { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(–border); }
+.av-line:last-child { border-bottom: none; }
+.av-label { color: var(–muted); font-size: 10px; letter-spacing: 1px; }
+.av-val { font-weight: 500; }
+.av-live { color: #00ff88; }
+.av-warn { color: var(–gold); }
+.av-accent { color: var(–accent); }
+.av-red { color: #ff4444; }
+
+/* WHY LNL */
+.why-full { max-width: 1200px; margin: 0 auto; padding: 0 60px 100px; }
+
+.why-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+margin-top: 60px;
+}
+
+.why-card {
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: 8px;
+padding: 36px 28px;
+transition: all 0.3s;
+}
+
+.why-card:hover {
+border-color: rgba(201,168,76,0.3);
+transform: translateY(-3px);
+}
+
+.why-num {
+font-family: var(–bebas);
+font-size: 64px;
+color: rgba(201,168,76,0.15);
+line-height: 1;
+margin-bottom: 8px;
+}
+
+.why-title {
+font-family: var(–bebas);
+font-size: 22px;
+letter-spacing: 1px;
+color: var(–white);
+margin-bottom: 10px;
+}
+
+.why-desc {
+font-size: 14px;
+color: var(–muted);
+line-height: 1.65;
+}
+
+/* CTA */
+.cta-section {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 60px 120px;
+}
+
+.cta-box {
+background: linear-gradient(135deg, #111620 0%, #0d1520 100%);
+border: 1px solid rgba(201,168,76,0.2);
+border-radius: 12px;
+padding: 80px 60px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.cta-box::before {
+content: ‘’;
+position: absolute;
+top: -80px; left: 50%;
+transform: translateX(-50%);
+width: 600px; height: 300px;
+background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%);
+}
+
+.cta-box h2 {
+font-family: var(–bebas);
+font-size: clamp(42px, 6vw, 72px);
+letter-spacing: 3px;
+margin-bottom: 20px;
+}
+
+.cta-box h2 span { color: var(–gold); }
+
+.cta-box p {
+font-size: 17px;
+color: var(–muted);
+max-width: 500px;
+margin: 0 auto 40px;
+line-height: 1.7;
+}
+
+.contact-info {
+display: flex;
+justify-content: center;
+gap: 48px;
+margin-top: 48px;
+flex-wrap: wrap;
+}
+
+.contact-item {
+text-align: center;
+}
+
+.contact-label {
+font-family: var(–mono);
+font-size: 9px;
+color: var(–muted);
+letter-spacing: 2px;
+margin-bottom: 6px;
+}
+
+.contact-val {
+font-family: var(–dm);
+font-size: 15px;
+font-weight: 500;
+color: var(–white);
+}
+
+/* FOOTER */
+footer {
+border-top: 1px solid var(–border);
+padding: 40px 60px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+max-width: 100%;
+}
+
+.footer-logo {
+font-family: var(–bebas);
+font-size: 20px;
+letter-spacing: 3px;
+color: var(–muted);
+}
+
+.footer-copy {
+font-family: var(–mono);
+font-size: 10px;
+color: var(–muted);
+letter-spacing: 1px;
+}
+
+.footer-right {
+font-family: var(–mono);
+font-size: 10px;
+color: var(–muted);
+letter-spacing: 1px;
+}
+
+/* DIVIDER */
+.divider {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 60px;
+}
+
+.divider hr {
+border: none;
+border-top: 1px solid var(–border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+nav { padding: 16px 24px; }
+.nav-links { display: none; }
+section, .clients-full, .process-full, .app-section, .why-full, .cta-section { padding-left: 24px; padding-right: 24px; }
+.what-layout { grid-template-columns: 1fr; gap: 40px; }
+.services-grid { grid-template-columns: 1fr; }
+.clients-grid { grid-template-columns: 1fr; }
+.process-steps { grid-template-columns: 1fr 1fr; }
+.process-steps::before { display: none; }
+.app-showcase { grid-template-columns: 1fr; padding: 36px 24px; }
+.why-grid { grid-template-columns: 1fr; }
+.hero-stats { gap: 32px; }
+footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+.divider { padding: 0 24px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-main">LNL SOLUTIONS</div>
+    <div class="nav-logo-sub">AI INTEGRATION COMPANY</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#clients">Who We Serve</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#5th">5th App</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;">
+    <div class="hero-tag">AI-POWERED GROWTH SYSTEMS</div>
+    <h1>LNL<br><span>SOLUTIONS</span></h1>
+    <div class="hero-sub">LLC</div>
+    <p>We integrate artificial intelligence into your business to generate qualified leads, dominate search rankings, and systematically funnel clients to your door — so you can focus on what you do best.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">START GROWING →</a>
+      <a href="#services" class="btn-secondary">SEE HOW IT WORKS</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">6+</div>
+        <div class="hero-stat-lbl">INDUSTRIES SERVED</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">AI</div>
+        <div class="hero-stat-lbl">POWERED SYSTEMS</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">24/7</div>
+        <div class="hero-stat-lbl">LEAD GENERATION</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+
+<section id="services">
+  <div class="what-layout">
+    <div>
+      <div class="section-tag">WHAT WE DO</div>
+      <h2 class="section-title">WE BUILD YOUR<br><span>DIGITAL ENGINE</span></h2>
+      <p class="section-body">LNL Solutions LLC deploys AI-driven systems that identify, attract, and funnel qualified clients directly to your business. From search engine dominance to automated lead pipelines, we build the infrastructure that scales your revenue.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <div class="service-name">AI INTEGRATION</div>
+        <div class="service-desc">Deploy intelligent automation that works around the clock to identify and convert potential clients.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <div class="service-name">SEO DOMINANCE</div>
+        <div class="service-desc">Own your local and national search rankings so clients find you before they find anyone else.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <div class="service-name">LEAD FUNNELING</div>
+        <div class="service-desc">Systematic pipelines that capture, qualify, and deliver ready-to-convert leads to your team.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <div class="service-name">DIGITAL SCALING</div>
+        <div class="service-desc">Build the digital infrastructure that lets your business grow beyond its current ceiling.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- WHO WE SERVE -->
+
+<div class="clients-full" id="clients">
+  <div style="margin-bottom:0;">
+    <div class="section-tag">WHO WE SERVE</div>
+    <h2 class="section-title">BUILT FOR BUSINESSES<br><span>READY TO SCALE</span></h2>
+  </div>
+  <div class="clients-grid">
+    <div class="client-card">
+      <div class="client-icon">⚖️</div>
+      <div class="client-title">ACCIDENT ATTORNEYS</div>
+      <div class="client-desc">We connect your practice with accident victims at the exact moment they need legal representation — before your competition even knows the accident happened.</div>
+    </div>
+    <div class="client-card">
+      <div class="client-icon">🏥</div>
+      <div class="client-title">MEDICAL CLINICS</div>
+      <div class="client-desc">Funnel injury patients directly to your clinic through intelligent real-time systems that identify those in need of immediate medical attention.</div>
+    </div>
+    <div class="client-card">
+      <div class="client-icon">🦴</div>
+      <div class="client-title">CHIROPRACTORS</div>
+      <div class="client-desc">Accident-related injuries are your specialty. Our system ensures that patients seeking post-accident care are directed to your practice first.</div>
+    </div>
+    <div class="client-card">
+      <div class="client-icon">🚗</div>
+      <div class="client-title">AUTO BODY SHOPS</div>
+      <div class="client-desc">Get in front of vehicle owners the moment an accident occurs. Our funneling system drives collision repair clients directly to your door.</div>
+    </div>
+    <div class="client-card">
+      <div class="client-icon">🚛</div>
+      <div class="client-title">TOW TRUCK & ROADSIDE</div>
+      <div class="client-desc">Real-time incident intelligence means your dispatch gets the call before competitors. Dominate your service area with AI-powered lead delivery.</div>
+    </div>
+    <div class="client-card">
+      <div class="client-icon">🔧</div>
+      <div class="client-title">BLUE COLLAR BUSINESSES</div>
+      <div class="client-desc">Contractors, trades, and service businesses deserve the same digital firepower as enterprise companies. We level the playing field.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- HOW IT WORKS -->
+
+<div class="process-full" id="process">
+  <div class="section-tag">THE PROCESS</div>
+  <h2 class="section-title">HOW WE<br><span>SCALE YOU</span></h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">AUDIT & STRATEGY</div>
+      <div class="step-desc">We analyze your business, market, and competition to build a custom AI growth blueprint.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">BUILD & INTEGRATE</div>
+      <div class="step-desc">We deploy your lead funneling system, SEO infrastructure, and AI automation stack.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">ACTIVATE & FUNNEL</div>
+      <div class="step-desc">Your system goes live — qualified leads begin flowing directly to your business in real time.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">SCALE & OPTIMIZE</div>
+      <div class="step-desc">We continuously optimize your pipeline to increase volume, quality, and conversion rates.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- 5TH APP -->
+
+<div class="app-section" id="5th">
+  <div class="app-showcase">
+    <div>
+      <div class="app-badge">⚡ FLAGSHIP PRODUCT</div>
+      <div class="app-title">THE <span>5TH</span><br>APPLICATION</div>
+      <p class="app-desc">Our proprietary real-time accident intelligence platform for the Detroit Metro area. 5th aggregates live incident data from multiple verified sources and funnels accident victims directly to our partner businesses — 24 hours a day.</p>
+      <div class="app-features">
+        <div class="app-feature">Real-time accident detection across Detroit Metro</div>
+        <div class="app-feature">Multi-source data: TomTom, HERE, MDOT, Police Dispatch</div>
+        <div class="app-feature">Instant lead funneling to partner attorneys, clinics, shops</div>
+        <div class="app-feature">AI-powered incident classification and severity scoring</div>
+        <div class="app-feature">Live map with street-level incident verification</div>
+        <div class="app-feature">Push notification alerts within seconds of incident</div>
+      </div>
+    </div>
+    <div class="app-visual">
+      <div style="font-family:var(--bebas);font-size:14px;letter-spacing:3px;color:var(--gold);margin-bottom:16px;">⚡ 5TH · LIVE FEED</div>
+      <div class="av-line">
+        <span class="av-label">STATUS</span>
+        <span class="av-val av-live">● MONITORING ACTIVE</span>
+      </div>
+      <div class="av-line">
+        <span class="av-label">INCIDENT #1</span>
+        <span class="av-val av-red">🔴 MVA · I-75 @ M-8</span>
+      </div>
+      <div class="av-line">
+        <span class="av-label">INCIDENT #2</span>
+        <span class="av-val av-warn">🟡 CRASH · WB I-94</span>
+      </div>
+      <div class="av-line">
+        <span class="av-label">INCIDENT #3</span>
+        <span class="av-val av-red">🔴 HIT & RUN · M-39</span>
+      </div>
+      <div class="av-line">
+        <span class="av-label">LEADS FUNNELED</span>
+        <span class="av-val av-live">↗ DISPATCHING NOW</span>
+      </div>
+      <div class="av-line">
+        <span class="av-label">DATA SOURCES</span>
+        <span class="av-val av-accent">6 ACTIVE</span>
+      </div>
+      <div class="av-line">
+        <span class="av-label">COVERAGE</span>
+        <span class="av-val">DETROIT METRO · 25MI</span>
+      </div>
+      <div class="av-line">
+        <span class="av-label">LAST REFRESH</span>
+        <span class="av-val av-live">30 SECONDS AGO</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- WHY LNL -->
+
+<div class="why-full">
+  <div class="section-tag">WHY LNL SOLUTIONS</div>
+  <h2 class="section-title">THE UNFAIR<br><span>ADVANTAGE</span></h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <div class="why-title">REAL-TIME INTELLIGENCE</div>
+      <div class="why-desc">We don't wait for clients to find you. Our systems identify potential clients the moment an event occurs and funnel them to you before anyone else has a chance.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <div class="why-title">AI-FIRST APPROACH</div>
+      <div class="why-desc">Every system we build is powered by artificial intelligence — meaning it learns, improves, and becomes more effective the longer it runs on your behalf.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <div class="why-title">BUILT FOR YOUR INDUSTRY</div>
+      <div class="why-desc">We don't build generic marketing campaigns. Every solution is purpose-built for your specific business category and client acquisition needs.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">04</div>
+      <div class="why-title">DIGITAL FOOTHOLD</div>
+      <div class="why-desc">We establish your permanent digital presence — SEO, local rankings, online authority — so clients find you organically for years to come.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">05</div>
+      <div class="why-title">GUARANTEED RESULTS</div>
+      <div class="why-desc">We stand behind our systems with performance guarantees. Your success is our success — we don't profit unless you do.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">06</div>
+      <div class="why-title">END-TO-END SYSTEM</div>
+      <div class="why-desc">From lead identification to client follow-up, we manage the entire acquisition pipeline so you never have to worry about where your next client is coming from.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+
+<div class="cta-section" id="contact">
+  <div class="cta-box">
+    <h2>READY TO<br><span>SCALE YOUR BUSINESS?</span></h2>
+    <p>Let's build your AI-powered growth system. Contact LNL Solutions LLC today and find out how we can start funneling qualified clients to your business.</p>
+    <div class="hero-btns">
+      <a href="mailto:lnlsolutions@proton.me" class="btn-primary">CONTACT US TODAY →</a>
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-label">COMPANY</div>
+        <div class="contact-val">LNL Solutions LLC</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">ENTITY</div>
+        <div class="contact-val">Arizona LLC</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">EMAIL</div>
+        <div class="contact-val">lnlsolutions@proton.me</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">LNL SOLUTIONS LLC</div>
+  <div class="footer-copy">© 2026 LNL Solutions LLC · All Rights Reserved · Arizona LLC</div>
+  <div class="footer-right">AI INTEGRATION · SEO · LEAD GENERATION</div>
+</footer>
+
+</body>
+</html>
+	
+	
+- [ ] 
