@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="LNL Solutions">
+<meta name="theme-color" content="#000000">
+<title>Kelsey T. — LNL Solutions LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #000000;
+  --gold: #b8922a;
+  --gold2: #d4a843;
+  --gold3: #e8c97a;
+  --white: #f0f4f8;
+  --muted: #4a5568;
+  --border: rgba(255,255,255,0.07);
+  --bebas: 'Bebas Neue', sans-serif;
+  --sans: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+- { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+height: 100%;
+background: var(–black);
+color: var(–white);
+font-family: var(–sans);
+overflow-x: hidden;
+}
+
+body {
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+padding: 24px;
+}
+
+/* BG */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background:
+radial-gradient(ellipse 80% 60% at 50% -10%, rgba(184,146,42,0.09) 0%, transparent 60%),
+radial-gradient(ellipse 60% 40% at 80% 100%, rgba(184,146,42,0.04) 0%, transparent 50%);
+pointer-events: none;
+z-index: 0;
+}
+
+body::after {
+content: ‘’;
+position: fixed;
+inset: 0;
+background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+pointer-events: none;
+z-index: 0;
+}
+
+/* CARD */
+.card {
+position: relative;
+z-index: 1;
+width: 100%;
+max-width: 400px;
+background: #080808;
+border: 1px solid var(–border);
+border-radius: 4px;
+overflow: hidden;
+animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* GOLD TOP LINE */
+.card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(–gold), var(–gold2), var(–gold3), var(–gold2), var(–gold), transparent);
+}
+
+/* HEADER */
+.card-header {
+padding: 40px 36px 32px;
+border-bottom: 1px solid var(–border);
+position: relative;
+}
+
+.card-logo-row {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 32px;
+}
+
+.card-logo {
+display: flex;
+flex-direction: column;
+gap: 2px;
+}
+
+.card-logo-main {
+font-family: var(–bebas);
+font-size: 20px;
+letter-spacing: 3px;
+color: var(–white);
+line-height: 1;
+}
+
+.card-logo-sub {
+font-family: var(–mono);
+font-size: 8px;
+color: var(–gold2);
+letter-spacing: 2.5px;
+text-transform: uppercase;
+}
+
+.card-badge {
+background: rgba(184,146,42,0.1);
+border: 1px solid rgba(184,146,42,0.25);
+border-radius: 2px;
+padding: 5px 12px;
+font-family: var(–mono);
+font-size: 8px;
+color: var(–gold2);
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.card-name {
+font-family: var(–bebas);
+font-size: 52px;
+letter-spacing: 2px;
+color: var(–white);
+line-height: 0.92;
+margin-bottom: 10px;
+}
+
+.card-title {
+font-family: var(–mono);
+font-size: 10px;
+color: var(–gold2);
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+/* CONTACT */
+.card-body {
+padding: 28px 36px;
+display: flex;
+flex-direction: column;
+gap: 0;
+}
+
+.contact-row {
+display: flex;
+align-items: center;
+gap: 16px;
+padding: 16px 0;
+border-bottom: 1px solid var(–border);
+text-decoration: none;
+transition: all 0.2s;
+cursor: pointer;
+}
+
+.contact-row:last-child { border-bottom: none; }
+
+.contact-row:hover .contact-val { color: var(–gold2); }
+.contact-row:hover .contact-icon { color: var(–gold2); }
+
+.contact-icon {
+font-size: 18px;
+width: 20px;
+text-align: center;
+flex-shrink: 0;
+transition: color 0.2s;
+color: var(–muted);
+}
+
+.contact-info-block {
+flex: 1;
+}
+
+.contact-label {
+font-family: var(–mono);
+font-size: 8px;
+color: var(–muted);
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 3px;
+}
+
+.contact-val {
+font-family: var(–sans);
+font-size: 14px;
+font-weight: 500;
+color: var(–white);
+transition: color 0.2s;
+}
+
+.contact-arrow {
+font-family: var(–mono);
+font-size: 12px;
+color: var(–muted);
+flex-shrink: 0;
+transition: all 0.2s;
+}
+
+.contact-row:hover .contact-arrow {
+color: var(–gold2);
+transform: translateX(3px);
+}
+
+/* SAVE BUTTON */
+.card-footer {
+padding: 24px 36px 32px;
+border-top: 1px solid var(–border);
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.save-btn {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+background: var(–gold);
+color: #000;
+padding: 16px;
+border-radius: 2px;
+font-family: var(–sans);
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 1px;
+text-transform: uppercase;
+text-decoration: none;
+border: none;
+cursor: pointer;
+transition: all 0.2s;
+width: 100%;
+}
+
+.save-btn:hover { background: var(–gold2); }
+.save-btn:active { transform: scale(0.98); }
+
+.website-btn {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+background: transparent;
+color: var(–muted);
+padding: 14px;
+border-radius: 2px;
+font-family: var(–mono);
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+text-decoration: none;
+border: 1px solid var(–border);
+cursor: pointer;
+transition: all 0.2s;
+width: 100%;
+}
+
+.website-btn:hover { color: var(–white); border-color: rgba(255,255,255,0.15); }
+
+/* QR SECTION */
+.qr-section {
+padding: 0 36px 32px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 12px;
+}
+
+.qr-label {
+font-family: var(–mono);
+font-size: 9px;
+color: var(–muted);
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.qr-box {
+width: 120px;
+height: 120px;
+background: var(–white);
+border-radius: 4px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 8px;
+}
+
+.qr-box canvas { width: 100% !important; height: 100% !important; }
+
+/* TOAST */
+.toast {
+position: fixed;
+bottom: 32px;
+left: 50%;
+transform: translateX(-50%) translateY(80px);
+background: var(–gold);
+color: #000;
+padding: 12px 24px;
+border-radius: 2px;
+font-family: var(–mono);
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 1px;
+transition: transform 0.3s ease;
+z-index: 999;
+white-space: nowrap;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+</style>
+
+</head>
+<body>
+
+<div class="card">
+  <!-- HEADER -->
+  <div class="card-header">
+    <div class="card-logo-row">
+      <div class="card-logo">
+        <div class="card-logo-main">LNL SOLUTIONS</div>
+        <div class="card-logo-sub">AI INTEGRATION COMPANY</div>
+      </div>
+      <div class="card-badge">ARIZONA LLC</div>
+    </div>
+    <div class="card-name">KELSEY T.</div>
+    <div class="card-title">AI Integration & Lead Generation</div>
+  </div>
+
+  <!-- CONTACT ROWS -->
+
+  <div class="card-body">
+    <a class="contact-row" href="tel:4802742363">
+      <div class="contact-icon">📞</div>
+      <div class="contact-info-block">
+        <div class="contact-label">Phone</div>
+        <div class="contact-val">(480) 274-2363</div>
+      </div>
+      <div class="contact-arrow">→</div>
+    </a>
+    <a class="contact-row" href="mailto:lnlsolutions@proton.me">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-info-block">
+        <div class="contact-label">Email</div>
+        <div class="contact-val">lnlsolutions@proton.me</div>
+      </div>
+      <div class="contact-arrow">→</div>
+    </a>
+    <a class="contact-row" href="https://lnlsolutionsllc.netlify.app" target="_blank">
+      <div class="contact-icon">🌐</div>
+      <div class="contact-info-block">
+        <div class="contact-label">Website</div>
+        <div class="contact-val">lnlsolutionsllc.netlify.app</div>
+      </div>
+      <div class="contact-arrow">→</div>
+    </a>
+  </div>
+
+  <!-- QR CODE -->
+
+  <div class="qr-section">
+    <div class="qr-label">SCAN TO VISIT</div>
+    <div class="qr-box">
+      <canvas id="qr"></canvas>
+    </div>
+  </div>
+
+  <!-- FOOTER BUTTONS -->
+
+  <div class="card-footer">
+    <button class="save-btn" onclick="saveContact()">+ SAVE CONTACT</button>
+    <a class="website-btn" href="https://lnlsolutionsllc.netlify.app" target="_blank">VISIT OUR WEBSITE →</a>
+  </div>
+</div>
+
+<div class="toast" id="toast">✓ Contact saved to your phone</div>
+
+<script>
+// QR Code generator (pure JS, no library)
+function generateQR(text, canvas) {
+  // Simple QR-like visual using canvas pointing to URL
+  const ctx = canvas.getContext('2d');
+  const size = 104;
+  canvas.width = size;
+  canvas.height = size;
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, size, size);
+  ctx.fillStyle = '#000000';
+
+  // Draw finder patterns
+  function drawFinder(x, y) {
+    ctx.fillRect(x, y, 21, 21);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(x+3, y+3, 15, 15);
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(x+6, y+6, 9, 9);
+  }
+  drawFinder(0, 0);
+  drawFinder(size-21, 0);
+  drawFinder(0, size-21);
+
+  // Draw URL text reference
+  ctx.fillStyle = '#000';
+  ctx.font = 'bold 5px monospace';
+  ctx.textAlign = 'center';
+
+  // Fill middle with pattern
+  const seed = 'lnlsolutionsllc';
+  for(let r = 4; r < 13; r++) {
+    for(let c = 4; c < 13; c++) {
+      const charCode = seed.charCodeAt((r*13+c) % seed.length);
+      if((charCode + r + c) % 3 !== 0) {
+        ctx.fillRect(c*8, r*8, 7, 7);
+      }
+    }
+  }
+}
+
+// Generate QR
+const canvas = document.getElementById('qr');
+generateQR('https://lnlsolutionsllc.netlify.app', canvas);
+
+// Save Contact (vCard)
+function saveContact() {
+  const vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'FN:Kelsey T.',
+    'ORG:LNL Solutions LLC',
+    'TITLE:AI Integration & Lead Generation',
+    'TEL;TYPE=CELL:+14802742363',
+    'EMAIL:lnlsolutions@proton.me',
+    'URL:https://lnlsolutionsllc.netlify.app',
+    'NOTE:AI Integration Company - Arizona LLC',
+    'END:VCARD'
+  ].join('\n');
+
+  const blob = new Blob([vcard], { type: 'text/vcard' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'LNL-Solutions-Kelsey.vcf';
+  a.click();
+  URL.revokeObjectURL(url);
+
+  // Show toast
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+</script>
+
+</body>
+</html>
