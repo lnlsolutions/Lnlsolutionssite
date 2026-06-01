@@ -383,11 +383,23 @@
     </p>
   </div>
 
-  <form id="growthAuditForm" name="growth-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="contact-form">
+  <form
+    id="growthAuditForm"
+    name="growth-audit"
+    method="POST"
+    data-netlify="true"
+    netlify="true"
+    netlify-honeypot="bot-field"
+    action="/thank-you.html"
+    class="contact-form"
+  >
     <input type="hidden" name="form-name" value="growth-audit" />
 
-    <p style="display:none;">
-      <label>Do not fill this out: <input name="bot-field" /></label>
+    <p hidden>
+      <label>
+        Do not fill this out:
+        <input name="bot-field" />
+      </label>
     </p>
 
     <div class="form-row">
@@ -397,14 +409,11 @@
 
     <div class="form-row">
       <input type="tel" name="phone" placeholder="Phone Number" required />
-    </div>
-
-    <div class="form-row">
       <input type="text" name="business" placeholder="Business Name" required />
-      <input type="url" name="website" placeholder="Current Website" />
     </div>
 
     <div class="form-row">
+      <input type="url" name="website" placeholder="Current Website" />
       <select name="industry" required>
         <option value="">Industry</option>
         <option>Fitness & Athletics</option>
@@ -415,7 +424,9 @@
         <option>Small Business / Startup</option>
         <option>Other</option>
       </select>
+    </div>
 
+    <div class="form-row">
       <select name="budget">
         <option value="">Estimated Budget</option>
         <option>$2,500 - $5,000</option>
@@ -431,7 +442,7 @@
     ></textarea>
 
     <label style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#CBD5E1;">
-      <input type="checkbox" name="sms-consent" required style="width:auto; margin-top:4px;">
+      <input type="checkbox" name="sms-consent" value="Yes" required style="width:auto; margin-top:4px;">
       <span>
         I agree to receive phone calls, text messages, and emails from LNL Solutions regarding my Free Growth Audit request.
       </span>
@@ -461,30 +472,6 @@
 <a href="#contact" class="mobile-sticky">Free Growth Audit</a>
 
 <script src="script.js"></script>
-
-<script>
-  const growthAuditForm = document.getElementById("growthAuditForm");
-
-  if (growthAuditForm) {
-    growthAuditForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const formData = new FormData(growthAuditForm);
-
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      })
-      .then(function () {
-        window.location.href = "/thank-you.html?v=2";
-      })
-      .catch(function () {
-        alert("There was an issue submitting the form. Please try again or contact LNL Solutions directly.");
-      });
-    });
-  }
-</script>
 
 </body>
 </html>
