@@ -6,7 +6,7 @@
 
 <title>Free Growth Audit | LNL Solutions</title>
 
-<meta name="description" content="Get a free business growth audit from LNL Solutions. We'll review your website, SEO, lead generation, automation systems, and growth opportunities.">
+<meta name="description" content="Request a free AI growth audit from LNL Solutions. We'll review your website, lead flow, CRM, automation, follow-up, and growth opportunities.">
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -26,7 +26,6 @@ LNL <span>Solutions</span>
 <a href="index.html">Home</a>
 <a href="solutions.html">Solutions</a>
 <a href="industries.html">Industries</a>
-<a href="portfolio.html">Portfolio</a>
 <a href="growth-audit.html">Growth Audit</a>
 <a href="contact.html">Contact</a>
 </nav>
@@ -34,80 +33,61 @@ LNL <span>Solutions</span>
 </header>
 
 <section class="page-hero">
-
 <div class="container">
 
-<p class="eyebrow">
-FREE BUSINESS GROWTH AUDIT
-</p>
+<p class="eyebrow">FREE AI GROWTH AUDIT</p>
 
-<h1>
-Discover The Biggest Opportunities In Your Business
-</h1>
+<h1>Find Out Where Your Business Is Losing Leads, Time, And Revenue</h1>
 
 <p>
-We will review your website, SEO, lead generation process, automation systems, online visibility, and customer acquisition strategy to identify areas for growth.
+LNL Solutions will review your website, lead capture, follow-up process, CRM, automation opportunities, and growth systems to identify where your business can improve.
 </p>
 
 </div>
-
 </section>
 
 <section class="service-section">
-
 <div class="container">
 
 <div class="service-card">
-
 <h2>What We Review</h2>
-
 <ul>
-<li>Your Website & Conversion Rate</li>
-<li>Google Visibility & Local SEO</li>
-<li>Lead Capture Process</li>
-<li>Sales Funnel Performance</li>
-<li>Automation Opportunities</li>
-<li>Customer Follow-Up Systems</li>
-<li>Brand Positioning</li>
-<li>Growth Opportunities</li>
+<li>Website conversion opportunities</li>
+<li>Lead capture process</li>
+<li>CRM and tracking systems</li>
+<li>Email and text follow-up</li>
+<li>Automation opportunities</li>
+<li>Google visibility and SEO</li>
+<li>Sales pipeline gaps</li>
+<li>Growth system recommendations</li>
 </ul>
-
 </div>
 
 <div class="service-card">
-
 <h2>What You'll Receive</h2>
-
 <ul>
-<li>Growth Opportunity Analysis</li>
-<li>Website Improvement Recommendations</li>
-<li>SEO Recommendations</li>
-<li>Automation Opportunities</li>
-<li>Lead Generation Strategy Suggestions</li>
-<li>Technology Roadmap</li>
-<li>Actionable Next Steps</li>
+<li>Growth opportunity analysis</li>
+<li>Lead management recommendations</li>
+<li>Website improvement suggestions</li>
+<li>Automation roadmap</li>
+<li>CRM and follow-up recommendations</li>
+<li>Actionable next steps</li>
 </ul>
-
 </div>
 
 </div>
-
 </section>
 
 <section class="contact">
 
 <div class="contact-copy">
 
-<p class="eyebrow">
-REQUEST YOUR AUDIT
-</p>
+<p class="eyebrow">REQUEST YOUR AUDIT</p>
 
-<h2>
-Let's Identify Your Biggest Growth Opportunities
-</h2>
+<h2>Let's Identify Your Biggest Growth Opportunities</h2>
 
 <p>
-Complete the form below and a member of the LNL Solutions team will review your business and contact you regarding your free audit.
+Complete the form below and LNL Solutions will review your business information and contact you regarding your free audit.
 </p>
 
 </div>
@@ -116,121 +96,86 @@ Complete the form below and a member of the LNL Solutions team will review your 
 name="growth-audit"
 method="POST"
 data-netlify="true"
+netlify-honeypot="bot-field"
 action="/thank-you.html"
 class="contact-form"
 >
 
 <input type="hidden" name="form-name" value="growth-audit">
+<input type="hidden" name="lead_source" value="Growth Audit Website Form">
+<input type="hidden" name="business" value="LNL Solutions">
+<input type="hidden" name="status" value="New Lead">
+<input type="hidden" name="assigned_agent" value="LNL Growth Agent">
+
+<p style="display:none;">
+<label>Do not fill this out: <input name="bot-field"></label>
+</p>
 
 <div class="form-row">
-
-<input
-type="text"
-name="name"
-placeholder="Full Name"
-required
->
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required
->
-
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email Address" required>
 </div>
 
 <div class="form-row">
-
-<input
-type="text"
-name="company"
-placeholder="Company Name"
-required
->
-
-<input
-type="url"
-name="website"
-placeholder="Website URL"
->
-
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="text" name="company" placeholder="Business Name" required>
 </div>
 
 <div class="form-row">
+<input type="url" name="website" placeholder="Website URL">
+<input type="text" name="industry" placeholder="Industry" required>
+</div>
 
-<select name="industry" required>
-
-<option value="">
-Select Industry
-</option>
-
-<option>
-Fitness & Athletics
-</option>
-
-<option>
-Home Services
-</option>
-
-<option>
-Restaurant & Hospitality
-</option>
-
-<option>
-Beauty & Wellness
-</option>
-
-<option>
-Professional Services
-</option>
-
-<option>
-Startup / Small Business
-</option>
-
-<option>
-Other
-</option>
-
+<div class="form-row">
+<select name="revenue_range" required>
+<option value="">Current Monthly Revenue</option>
+<option>Under $10k</option>
+<option>$10k-$25k</option>
+<option>$25k-$50k</option>
+<option>$50k-$100k</option>
+<option>$100k+</option>
 </select>
 
-<select name="budget">
+<select name="timeline" required>
+<option value="">How soon are you looking to improve?</option>
+<option>Immediately</option>
+<option>30 Days</option>
+<option>90 Days</option>
+<option>Researching</option>
+</select>
+</div>
 
-<option value="">
-Estimated Project Budget
-</option>
-
-<option>
-$2,500 - $5,000
-</option>
-
-<option>
-$5,000 - $10,000
-</option>
-
-<option>
-$10,000 - $25,000
-</option>
-
-<option>
-$25,000+
-</option>
-
+<div class="form-row">
+<select name="monthly_leads">
+<option value="">Approximate Monthly Leads</option>
+<option>0-10</option>
+<option>10-25</option>
+<option>25-50</option>
+<option>50-100</option>
+<option>100+</option>
 </select>
 
+<input type="number" name="team_size" placeholder="Team Size">
 </div>
 
 <textarea
-name="challenge"
-placeholder="What is your biggest challenge right now?"
+name="biggest_challenge"
+placeholder="What is your biggest growth challenge right now?"
 required
 ></textarea>
 
 <textarea
 name="goals"
 placeholder="What would success look like over the next 12 months?"
+required
 ></textarea>
+
+<label style="display:flex; gap:10px; align-items:flex-start; font-size:14px;">
+<input type="checkbox" name="consent" required style="width:auto; margin-top:4px;">
+<span>
+I agree to receive emails, phone calls, and text messages from LNL Solutions regarding my Growth Audit request.
+</span>
+</label>
 
 <button type="submit" class="btn primary">
 Request My Free Growth Audit
@@ -241,15 +186,12 @@ Request My Free Growth Audit
 </section>
 
 <section class="cta-section">
-
 <div class="container">
 
-<h2>
-Why Businesses Work With LNL Solutions
-</h2>
+<h2>Why Businesses Work With LNL Solutions</h2>
 
 <p>
-We don't just build websites. We build systems that help businesses generate leads, automate operations, increase visibility, and scale efficiently.
+We do not just build websites. We build connected growth systems that help businesses capture leads, automate follow-up, track opportunities, and scale through better systems.
 </p>
 
 <a href="contact.html" class="btn primary">
@@ -257,15 +199,10 @@ Speak With Our Team
 </a>
 
 </div>
-
 </section>
 
 <footer class="site-footer">
-
-<p>
-© 2026 LNL Solutions
-</p>
-
+<p>© 2026 LNL Solutions</p>
 </footer>
 
 <script src="script.js"></script>
