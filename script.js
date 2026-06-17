@@ -369,6 +369,7 @@ window.addEventListener("scroll", () => {
 
   // ── Submit lead data ──
   function submitLead() {
+    // Submit to Netlify forms
     const formData = new FormData();
     formData.append("form-name", "lionel-lead");
     formData.append("name", state.name);
@@ -380,8 +381,23 @@ window.addEventListener("scroll", () => {
     formData.append("revenue", state.revenue);
     formData.append("timeline", state.timeline);
     formData.append("source", "Lionel Chatbot");
-
     fetch("/", { method: "POST", body: formData }).catch(() => {});
+
+    // Trigger follow-up email via LNL backend
+    fetch("https://superagent-c4c9cb88.base44.app/functions/sendLionelFollowUp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: state.name,
+        email: state.email,
+        phone: state.phone,
+        business: state.business,
+        industry: state.industry,
+        needs: state.needs.join(", "),
+        revenue: state.revenue,
+        timeline: state.timeline,
+      }),
+    }).catch(() => {});
   }
 
   // ── Run a step ──
