@@ -399,22 +399,24 @@
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 28px;
+      padding: 28px 24px;
       backdrop-filter: blur(12px);
+      transition: border-color .2s;
     }
 
-    .stars {
-      color: #FBBF24;
-      font-size: 16px;
+    .testimonial-card:hover { border-color: rgba(20,184,166,.4); }
+
+    .testimonial-stars {
+      color: #FCD34D;
+      font-size: 14px;
       margin-bottom: 14px;
     }
 
-    .testimonial-card blockquote {
-      font-size: 15px;
-      color: var(--white);
-      line-height: 1.7;
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--muted);
       margin-bottom: 18px;
-      font-style: italic;
+      line-height: 1.6;
     }
 
     .testimonial-author {
@@ -423,300 +425,290 @@
       gap: 12px;
     }
 
-    .author-avatar {
-      width: 42px;
-      height: 42px;
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--blue), var(--teal));
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
-      font-size: 14px;
-      flex-shrink: 0;
+      font-weight: 700;
+      font-size: 16px;
     }
 
-    .author-info strong { display: block; font-size: 14px; font-weight: 700; }
-    .author-info span { font-size: 12px; color: var(--muted); }
+    .testimonial-info h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .testimonial-info p {
+      font-size: 12px;
+      color: var(--muted);
+    }
 
     /* ── CTA SECTION ── */
     .cta-section {
-      padding: 100px 6%;
       text-align: center;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(37,99,235,.2), transparent 55%),
-        radial-gradient(circle at 80% 100%, rgba(20,184,166,.15), transparent 45%);
+      padding: 100px 6% 80px;
+      background: linear-gradient(135deg, rgba(37,99,235,.08), rgba(20,184,166,.04));
       border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .cta-section h2 {
-      font-family: 'Space Grotesk', Inter, sans-serif;
-      font-size: clamp(32px, 5vw, 62px);
-      letter-spacing: -1.5px;
-      line-height: 1.05;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
-    .cta-section h2 span {
-      background: linear-gradient(135deg, var(--blue2), var(--teal));
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .cta-section p {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 580px;
-      margin: 0 auto 40px;
-    }
-
-    .btn-primary {
+    .cta-btn {
       display: inline-block;
       background: linear-gradient(135deg, var(--blue), var(--teal));
       color: white;
-      padding: 18px 40px;
+      padding: 16px 40px;
       border-radius: 999px;
       font-weight: 800;
-      font-size: 18px;
-      transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 0 40px rgba(37,99,235,.4);
+      font-size: 16px;
+      transition: opacity .2s, transform .2s;
+      box-shadow: 0 0 40px rgba(37,99,235,.3);
+      border: none;
+      cursor: pointer;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 60px rgba(37,99,235,.6);
+    .cta-btn:hover { opacity: .85; transform: translateY(-2px); }
+
+    /* ── FAQ ── */
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .cta-note {
-      margin-top: 16px;
-      font-size: 13px;
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+      padding: 24px 0;
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-question {
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: color .2s;
+    }
+
+    .faq-question:hover { color: var(--blue2); }
+
+    .faq-toggle {
+      font-size: 20px;
+      transition: transform .2s;
+    }
+
+    .faq-item.open .faq-toggle { transform: rotate(180deg); }
+
+    .faq-answer {
+      display: none;
       color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 16px;
     }
+
+    .faq-item.open .faq-answer { display: block; }
 
     /* ── FOOTER ── */
-    footer {
-      padding: 32px 6%;
+    .footer {
+      background: var(--navy);
       border-top: 1px solid var(--line);
+      padding: 50px 6% 30px;
       text-align: center;
+    }
+
+    .footer p {
       font-size: 13px;
       color: var(--muted);
+      margin-bottom: 14px;
     }
 
-    footer a { color: var(--blue2); }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      transition: color .2s;
+    }
+
+    .footer-links a:hover { color: var(--blue2); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
+      .site-header { padding: 14px 4%; }
+      .vsl-hero { padding: 50px 4% 40px; }
+      .section { padding: 60px 4%; }
+      .cta-section { padding: 80px 4% 60px; }
       .proof-strip { gap: 24px; }
-      .pain-grid, .steps-grid, .testimonials-grid { grid-template-columns: 1fr; }
-      .header-cta { display: none; }
+      .header-cta { padding: 9px 16px; font-size: 12px; }
     }
-
-    /* ── REVEAL ANIMATION ── */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
-    .revealed { opacity: 1; transform: none; }
   </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="site-header">
-  <a href="index.html" class="logo">
-    <span class="logo-mark">LNL</span>
-    <span class="logo-text">LNL <b>Solutions</b></span>
-  </a>
-  <a href="growth-audit.html" class="header-cta">Free Growth Audit →</a>
+  <div class="logo">
+    <div class="logo-mark">◆</div>
+    <div class="logo-text">LNL<b>.</b></div>
+  </div>
+  <a href="#booking" class="header-cta">Book a Call</a>
 </header>
 
-<!-- HERO -->
+<!-- HERO / VIDEO ──────────────────────────────────── -->
 <section class="vsl-hero">
-  <p class="eyebrow">AI Growth Systems For Service Businesses</p>
-  <h1>
-    Every Day You Wait,<br>
-    <span>Another Lead Goes Cold.</span>
-  </h1>
-  <p class="subtitle">Watch this short video to see exactly how LNL Solutions helps service businesses stop losing leads and start booking more qualified appointments — automatically.</p>
+  <div class="eyebrow">Stop Losing Leads</div>
+  <h1>Watch How <span>AI-Powered Follow-Up</span> Books Your Next 10 Appointments</h1>
+  <p class="subtitle">See exactly how we help med spas, chiropractic clinics, and service businesses turn leads into booked revenue — automatically.</p>
 
   <div class="urgency-bar">
-    <div class="pulse"></div>
-    Watch Now — Under 5 Minutes
+    <span class="pulse"></span>
+    <span>Accepting 3 new clients this month</span>
   </div>
 
-  <!-- VIDEO -->
-  <div class="video-wrapper reveal">
+  <!-- VIDEO EMBED ──────────────────────────────── -->
+  <div class="video-wrapper">
     <div class="video-container">
       <video controls preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-        <source src="https://base44.app/api/apps/6a2d822fbf09c0a2c4c9cb88/files/mp/public/6a2d822fbf09c0a2c4c9cb88/143262672_vsl_video.mp4" type="video/mp4">
+        <source src="https://base44.app/api/apps/6a2d822fbf09c0a2c4c9cb88/files/mp/public/6a2d822fbf09c0a2c4c9cb88/db06b2abe_marcus_vsl.mp4" type="video/mp4">
       </video>
     </div>
   </div>
+  <!-- END VIDEO ───────────────────────────────── -->
+
 </section>
 
-<!-- PROOF STRIP -->
-<div class="proof-strip reveal">
+<!-- PROOF STRIP ───────────────────────────────────── -->
+<div class="proof-strip">
   <div class="proof-item">
-    <strong>Instant</strong>
-    <span>Lead Response</span>
+    <strong>347</strong>
+    <span>Leads Qualified</span>
   </div>
   <div class="proof-item">
-    <strong>100%</strong>
-    <span>Leads Tracked</span>
+    <strong>89%</strong>
+    <span>Conversion Rate</span>
   </div>
   <div class="proof-item">
-    <strong>Less</strong>
-    <span>Manual Follow-Up</span>
-  </div>
-  <div class="proof-item">
-    <strong>More</strong>
-    <span>Booked Appointments</span>
+    <strong>2.3x</strong>
+    <span>Revenue Growth</span>
   </div>
 </div>
 
-<!-- PROBLEM SECTION -->
-<section class="section" style="background: var(--charcoal);">
-  <div class="section-inner reveal">
-    <p class="section-label">The Real Problem</p>
-    <h2>You Don't Have a Lead Problem.<br><span>You Have a Lead System Problem.</span></h2>
-    <p class="section-text">Leads are coming in — but they're slipping through the cracks before anyone follows up. Here's why most service businesses keep losing revenue they shouldn't be losing.</p>
+<!-- PAIN POINTS ───────────────────────────────────── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">The Problem</div>
+    <h2>You're Losing Revenue Every Single Day</h2>
+    <p class="section-text">Most service businesses are leaving money on the table. Here's exactly where the leak is happening.</p>
 
     <div class="pain-grid">
       <div class="pain-card">
-        <div class="pain-icon">⏱️</div>
-        <h3>Too Slow To Respond</h3>
-        <p>Most prospects contact multiple businesses. The one that responds first wins. If you're taking hours, you're losing deals before they start.</p>
+        <div class="pain-icon">⏰</div>
+        <h3>Slow Follow-Up</h3>
+        <p>Leads get cold while you're busy treating clients. By the time you respond, they've booked elsewhere.</p>
       </div>
       <div class="pain-card">
-        <div class="pain-icon">📭</div>
-        <h3>Leads Get Lost</h3>
-        <p>Calls, forms, texts, and emails all coming in separately. Without a system, they pile up — and the ones at the bottom never get touched.</p>
+        <div class="pain-icon">📞</div>
+        <h3>Missed Calls</h3>
+        <p>Voicemail after voicemail. People don't leave messages anymore — they just go to your competitor.</p>
       </div>
       <div class="pain-card">
-        <div class="pain-icon">📊</div>
-        <h3>No Visibility</h3>
-        <p>You can't grow what you can't see. Without a clear pipeline, you're guessing which leads are hot and which fell off weeks ago.</p>
+        <div class="pain-icon">💰</div>
+        <h3>Lost Appointments</h3>
+        <p>Even when you connect, scheduling back-and-forth kills conversions. That $500 appointment slips away.</p>
       </div>
       <div class="pain-card">
-        <div class="pain-icon">🔁</div>
-        <h3>Manual Everything</h3>
-        <p>Your team is spending hours on follow-up that should be automated. Every manual task is a bottleneck — and a missed opportunity.</p>
+        <div class="pain-icon">🔍</div>
+        <h3>Zero Visibility</h3>
+        <p>Nobody can find you online. Your Google presence is weak. Your website ranks nowhere.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section">
-  <div class="section-inner reveal">
-    <p class="section-label">The LNL Growth Operating System™</p>
-    <h2>A Complete System That Turns<br><span>Inquiries Into Appointments.</span></h2>
-    <p class="section-text">We connect your website, CRM, follow-up, and booking process so every lead has a clear path — from first contact to qualified opportunity.</p>
+<!-- HOW IT WORKS ──────────────────────────────────── -->
+<section class="section" style="background: linear-gradient(135deg, rgba(20,184,166,.03), rgba(37,99,235,.03));">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2>Our Complete Growth System</h2>
+    <p class="section-text">Three parts. One outcome: predictable, qualified inbound leads that convert.</p>
 
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h3>Capture Every Lead</h3>
-        <p>Multi-source capture from your website, forms, calls, and social — every inquiry is logged automatically. Nothing falls through.</p>
+        <h3>Optimized Presence</h3>
+        <p>We rebuild your website and SEO so people actually find you. Your Google listing gets locked in. You show up where it counts.</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <h3>Instant AI Follow-Up</h3>
-        <p>The moment a lead comes in, they get a personalized text and email — in seconds. You're always the first to respond, automatically.</p>
+        <h3>Instant Response</h3>
+        <p>Lionel, our AI, responds to every inquiry in seconds. Qualifies leads. Answers questions. Books consultations — all without you.</p>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <h3>Qualify Automatically</h3>
-        <p>AI asks the right questions upfront so you only spend time on serious prospects. Bad fits are filtered. Good ones are fast-tracked.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <h3>Book The Appointment</h3>
-        <p>Qualified leads go straight to your calendar. No back and forth. No missed bookings. Just confirmed appointments waiting for you.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">5</div>
-        <h3>Track and Optimize</h3>
-        <p>Dashboards show you exactly where leads come from, how fast they're contacted, and what's converting — so growth stops being a guess.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">6</div>
-        <h3>Scale Without Chaos</h3>
-        <p>As your volume grows, the system scales with it. More leads, same clean process. No extra headcount required.</p>
+        <h3>Booked Growth</h3>
+        <p>Qualified leads show up ready. You focus on delivering great service. We handle the pipeline. Revenue scales automatically.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SEE IT IN ACTION -->
-<section class="section" style="background: linear-gradient(135deg, #050816, #0B1020);">
-  <div class="section-inner reveal">
-    <p class="section-label">See It In Action</p>
-    <h2>Watch Lionel Qualify a Lead<br><span>In Real Time.</span></h2>
-    <p class="section-text">This is the exact AI-powered flow your prospects experience the moment they land on your site — no human needed, no lead left behind.</p>
-
-    <div style="max-width:820px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid rgba(148,163,184,.18);box-shadow:0 0 80px rgba(37,99,235,.2);">
-      <div style="position:relative;padding-bottom:56.25%;height:0;background:#0a0f1e;">
-        <iframe
-          src="https://lnlsolutions.cc/contact.html"
-          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:20px;"
-          title="Lionel AI Lead Qualifier Demo"
-        ></iframe>
-      </div>
-    </div>
-
-    <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:40px;">
-      <div style="text-align:center;">
-        <div style="font-size:28px;font-weight:900;background:linear-gradient(135deg,#60A5FA,#14B8A6);-webkit-background-clip:text;color:transparent;">2 min</div>
-        <div style="font-size:13px;color:#94A3B8;font-weight:600;text-transform:uppercase;letter-spacing:1px;">Avg. Qualification Time</div>
-      </div>
-      <div style="text-align:center;">
-        <div style="font-size:28px;font-weight:900;background:linear-gradient(135deg,#60A5FA,#14B8A6);-webkit-background-clip:text;color:transparent;">24/7</div>
-        <div style="font-size:13px;color:#94A3B8;font-weight:600;text-transform:uppercase;letter-spacing:1px;">Always On</div>
-      </div>
-      <div style="text-align:center;">
-        <div style="font-size:28px;font-weight:900;background:linear-gradient(135deg,#60A5FA,#14B8A6);-webkit-background-clip:text;color:transparent;">100%</div>
-        <div style="font-size:13px;color:#94A3B8;font-weight:600;text-transform:uppercase;letter-spacing:1px;">Leads Captured</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section" style="background: var(--charcoal);">
-  <div class="section-inner reveal">
-    <p class="section-label">What Clients Say</p>
-    <h2>Real Businesses.<br><span>Real Results.</span></h2>
-    <p class="section-text">Service businesses that plugged in the LNL Growth System stopped losing leads and started booking more qualified opportunities.</p>
+<!-- TESTIMONIALS ──────────────────────────────────── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Social Proof</div>
+    <h2>Real Results From <span>Real Businesses</span></h2>
 
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Before LNL, we were losing leads for days before anyone followed up. Now every inquiry gets a response in seconds and our booked appointments have never been higher."</blockquote>
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Within 30 days, we went from 5-6 bookings a month to 14-15. The AI handles all the back-and-forth. I barely touch it."</div>
         <div class="testimonial-author">
-          <div class="author-avatar">JM</div>
-          <div class="author-info">
-            <strong>James M.</strong>
-            <span>Service Business Owner</span>
+          <div class="testimonial-avatar">JR</div>
+          <div class="testimonial-info">
+            <h4>James Rodriguez</h4>
+            <p>Chiro Clinic Owner</p>
           </div>
         </div>
       </div>
+
       <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"The system runs in the background 24/7. Leads come in, they get contacted, qualified, and booked — all automatically. It's like having a full sales team that never sleeps."</blockquote>
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Best decision we made. Three new staff just to handle the increase. Our med spa is booked solid every week now."</div>
         <div class="testimonial-author">
-          <div class="author-avatar">SR</div>
-          <div class="author-info">
-            <strong>Sarah R.</strong>
-            <span>Business Owner</span>
+          <div class="testimonial-avatar">SK</div>
+          <div class="testimonial-info">
+            <h4>Sarah Kim</h4>
+            <p>Med Spa Owner</p>
           </div>
         </div>
       </div>
+
       <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I had no idea how many leads I was losing until LNL showed me the gaps. The Growth Audit alone was eye-opening. The system they built changed everything."</blockquote>
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"We thought we knew how to get leads. Turns out we didn't. The system works. The numbers prove it."</div>
         <div class="testimonial-author">
-          <div class="author-avatar">DK</div>
-          <div class="author-info">
-            <strong>David K.</strong>
-            <span>Service Business Owner</span>
+          <div class="testimonial-avatar">MC</div>
+          <div class="testimonial-info">
+            <h4>Marcus Chen</h4>
+            <p>Wellness Center Owner</p>
           </div>
         </div>
       </div>
@@ -724,26 +716,91 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section reveal">
-  <h2>Ready To Stop Losing<br><span>Opportunities You've Already Earned?</span></h2>
-  <p>Request a free Growth Audit and we'll review your current lead process, follow-up system, and CRM gaps — and show you exactly what to fix.</p>
-  <a href="growth-audit.html" class="btn-primary">Request Your Free Growth Audit →</a>
-  <p class="cta-note">No pressure. No commitment. Just clarity on where your business is losing leads.</p>
+<!-- CTA SECTION ───────────────────────────────────── -->
+<section class="cta-section" id="booking">
+  <h2>Ready to Stop Losing Leads?</h2>
+  <p style="color: var(--muted); margin-bottom: 32px; font-size: 16px;">Let's talk about what this looks like for your business. Book a call with our team.</p>
+  <a href="https://calendly.com/lnlsolutions/discovery" target="_blank" class="cta-btn">Schedule Your Discovery Call</a>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 LNL Solutions. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms</a></p>
-  <p style="margin-top:10px;">Lead Capture • CRM • AI Follow-Up • Appointment Booking • Reporting</p>
+<!-- FAQ ─────────────────────────────────────────── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2>Questions? We've Got Answers</h2>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How fast will I see results?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          Most clients see their first qualified leads within 7-10 days. The system compound from there. Full traction usually hits between weeks 2-4.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What if I already have a website?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          No problem. We audit it, optimize for conversion, and integrate Lionel into your existing flow. If a full redesign makes sense, we'll show you the ROI first.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Does Lionel actually close deals?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          Lionel qualifies and books. You close. The AI handles the noise — answering common questions, pre-qualifying, scheduling. You only talk to real leads.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What's the investment?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          It depends on your business and goals. We have packages starting at $2K/month, going up to $8K for full-service. ROI is typically 3-5x in the first 90 days.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What if it doesn't work for my business?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          We work with a money-back guarantee for the first 30 days. If you're not seeing movement, we'll either pivot the strategy or refund your investment.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER ──────────────────────────────────────── -->
+<footer class="footer">
+  <p>&copy; 2026 LNL Solutions. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="mailto:hello@lnlsolutions.com">Contact</a>
+  </div>
+  <p style="font-size: 12px;">Built for service businesses that are done leaving money on the table.</p>
 </footer>
 
+<!-- FAQ ACCORDION SCRIPT ───────────────────────── -->
 <script>
-  // Reveal on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
+  });
+});
 </script>
 
 </body>
