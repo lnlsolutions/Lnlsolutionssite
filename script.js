@@ -163,8 +163,8 @@ window.addEventListener("scroll", () => {
       id: "book",
       message: () => "You can book a call directly here — pick a time that works for you.",
       type: "link",
-      linkText: "Book a call →",
-      linkUrl: "https://lnlsolutions.cc/contact.html",
+      linkText: "📅 Book a 30-min call →",
+      linkUrl: "https://calendar.app.google/S94BZUXKDoNqy6rW6",
       next: () => "done",
     },
     {
