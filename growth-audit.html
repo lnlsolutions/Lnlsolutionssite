@@ -1,211 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Free Growth Audit | LNL Solutions</title>
-
-<meta name="description" content="Request a free AI growth audit from LNL Solutions. We'll review your website, lead flow, CRM, automation, follow-up, and growth opportunities.">
-
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Growth Audit | LNL Solutions</title>
+  <meta name="description" content="Request a free growth audit. We review your website, leads, follow-up, SEO, and automation — and tell you exactly what to fix first." />
+  <link rel="canonical" href="https://lnlsolutions.cc/growth-audit.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .audit-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; max-width: 1060px; margin: 0 auto; padding: 70px 6%; align-items: start; }
+    @media (max-width: 768px) { .audit-layout { grid-template-columns: 1fr; gap: 40px; } }
+    .audit-info h2 { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -.5px; margin-bottom: 20px; }
+    .audit-info h2 span { background: linear-gradient(135deg,#60A5FA,#14B8A6); -webkit-background-clip:text; color:transparent; }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .check-list li { display: flex; gap: 10px; font-size: 14px; color: #CBD5E1; line-height: 1.5; }
+    .check-list li::before { content: "✓"; color: #14B8A6; font-weight: 900; flex-shrink: 0; }
+    .audit-note { font-size: 13px; color: #64748B; line-height: 1.6; border-left: 2px solid #14B8A6; padding-left: 14px; }
+    .audit-form-wrap { background: rgba(15,23,42,.7); border: 1px solid rgba(148,163,184,.15); border-radius: 20px; padding: 36px; backdrop-filter: blur(12px); }
+    .audit-form-wrap h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .audit-form-wrap p { font-size: 13px; color: #94A3B8; margin-bottom: 24px; }
+    .form-stack { display: flex; flex-direction: column; gap: 12px; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 480px) { .form-row-2 { grid-template-columns: 1fr; } }
+    input, select, textarea {
+      width: 100%; padding: 12px 16px; border-radius: 10px;
+      border: 1px solid rgba(148,163,184,.2); background: rgba(5,8,22,.7);
+      color: #F8FAFC; font-size: 14px; font-family: 'Inter', sans-serif;
+    }
+    input::placeholder, textarea::placeholder { color: #475569; }
+    textarea { min-height: 90px; resize: vertical; }
+    select { color: #94A3B8; }
+    select option { background: #0B1020; color: #F8FAFC; }
+    .consent-label { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: #64748B; line-height: 1.5; cursor: pointer; }
+    .consent-label input { width: auto; flex-shrink: 0; margin-top: 2px; }
+    .submit-btn { width: 100%; padding: 15px; border-radius: 999px; border: none; background: linear-gradient(135deg, #2563EB, #14B8A6); color: white; font-size: 15px; font-weight: 800; cursor: pointer; transition: opacity .2s; }
+    .submit-btn:hover { opacity: .9; }
+  </style>
 </head>
-
 <body>
 
 <header class="site-header">
-
-<a href="index.html" class="logo">
-<div class="logo-mark">LNL</div>
-<div class="logo-text">
-LNL <span>Solutions</span>
-</div>
-</a>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="solutions.html">Solutions</a>
-<a href="industries.html">Industries</a>
-<a href="growth-audit.html">Growth Audit</a>
-<a href="contact.html">Contact</a>
-</nav>
-
+  <a href="index.html" class="logo">
+    <span class="logo-mark">LNL</span>
+    <span class="logo-text">LNL <b>Solutions</b></span>
+  </a>
+  <button class="menu-toggle" onclick="document.getElementById('mainNav').style.display = document.getElementById('mainNav').style.display === 'flex' ? 'none' : 'flex'" aria-label="Toggle menu">☰</button>
+  <nav id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="industries.html">Industries</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="vsl.html">See It In Action</a>
+    <a href="growth-audit.html">Growth Audit</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a href="growth-audit.html" class="header-cta">Free Audit</a>
 </header>
 
-<section class="page-hero">
-<div class="container">
-
-<p class="eyebrow">FREE AI GROWTH AUDIT</p>
-
-<h1>Find Out Where Your Business Is Losing Leads, Time, And Revenue</h1>
-
-<p>
-LNL Solutions will review your website, lead capture, follow-up process, CRM, automation opportunities, and growth systems to identify where your business can improve.
-</p>
-
-</div>
+<section style="text-align:center; padding: 64px 6% 32px; background: linear-gradient(135deg,#050816,#0B1020);">
+  <p class="eyebrow">Free Growth Audit</p>
+  <h1 style="font-family:'Space Grotesk',sans-serif; font-size:clamp(32px,5vw,58px); letter-spacing:-1.5px; line-height:1.05; max-width:640px; margin:0 auto 14px;">
+    Find Out Exactly Where Your Business Is Leaking Revenue
+  </h1>
+  <p style="color:#94A3B8; font-size:16px; max-width:440px; margin:0 auto;">Free. No pressure. We tell you what to fix — then you decide if you want our help.</p>
 </section>
 
-<section class="service-section">
-<div class="container">
+<div class="audit-layout">
 
-<div class="service-card">
-<h2>What We Review</h2>
-<ul>
-<li>Website conversion opportunities</li>
-<li>Lead capture process</li>
-<li>CRM and tracking systems</li>
-<li>Email and text follow-up</li>
-<li>Automation opportunities</li>
-<li>Google visibility and SEO</li>
-<li>Sales pipeline gaps</li>
-<li>Growth system recommendations</li>
-</ul>
-</div>
+  <div class="audit-info">
+    <h2>What We <span>Review</span></h2>
+    <ul class="check-list">
+      <li>Website and conversion performance</li>
+      <li>Google Business and local SEO</li>
+      <li>LinkedIn presence</li>
+      <li>Lead capture and follow-up speed</li>
+      <li>CRM and pipeline gaps</li>
+      <li>Automation opportunities</li>
+      <li>Competitive positioning</li>
+    </ul>
+    <p class="audit-note">You get a clear breakdown of what's working, what's not, and what to do first. No fluff.</p>
+  </div>
 
-<div class="service-card">
-<h2>What You'll Receive</h2>
-<ul>
-<li>Growth opportunity analysis</li>
-<li>Lead management recommendations</li>
-<li>Website improvement suggestions</li>
-<li>Automation roadmap</li>
-<li>CRM and follow-up recommendations</li>
-<li>Actionable next steps</li>
-</ul>
-</div>
+  <div class="audit-form-wrap">
+    <h3>Request Your Free Audit</h3>
+    <p>We review everything and get back to you within one business day.</p>
 
-</div>
-</section>
+    <form name="growth-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="form-stack">
+      <input type="hidden" name="form-name" value="growth-audit">
+      <p style="display:none;"><label>Do not fill this out: <input name="bot-field"></label></p>
 
-<section class="contact">
-
-<div class="contact-copy">
-
-<p class="eyebrow">REQUEST YOUR AUDIT</p>
-
-<h2>Let's Identify Your Biggest Growth Opportunities</h2>
-
-<p>
-Complete the form below and LNL Solutions will review your business information and contact you regarding your free audit.
-</p>
-
-</div>
-
-<form
-name="growth-audit"
-method="POST"
-data-netlify="true"
-netlify-honeypot="bot-field"
-action="/thank-you.html"
-class="contact-form"
->
-
-<input type="hidden" name="form-name" value="growth-audit">
-<input type="hidden" name="lead_source" value="Growth Audit Website Form">
-<input type="hidden" name="business" value="LNL Solutions">
-<input type="hidden" name="status" value="New Lead">
-<input type="hidden" name="assigned_agent" value="LNL Growth Agent">
-
-<p style="display:none;">
-<label>Do not fill this out: <input name="bot-field"></label>
-</p>
-
-<div class="form-row">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email Address" required>
-</div>
-
-<div class="form-row">
-<input type="tel" name="phone" placeholder="Phone Number" required>
-<input type="text" name="company" placeholder="Business Name" required>
-</div>
-
-<div class="form-row">
-<input type="url" name="website" placeholder="Website URL">
-<input type="text" name="industry" placeholder="Industry" required>
-</div>
-
-<div class="form-row">
-<select name="revenue_range" required>
-<option value="">Current Monthly Revenue</option>
-<option>Under $10k</option>
-<option>$10k-$25k</option>
-<option>$25k-$50k</option>
-<option>$50k-$100k</option>
-<option>$100k+</option>
-</select>
-
-<select name="timeline" required>
-<option value="">How soon are you looking to improve?</option>
-<option>Immediately</option>
-<option>30 Days</option>
-<option>90 Days</option>
-<option>Researching</option>
-</select>
-</div>
-
-<div class="form-row">
-<select name="monthly_leads">
-<option value="">Approximate Monthly Leads</option>
-<option>0-10</option>
-<option>10-25</option>
-<option>25-50</option>
-<option>50-100</option>
-<option>100+</option>
-</select>
-
-<input type="number" name="team_size" placeholder="Team Size">
-</div>
-
-<textarea
-name="biggest_challenge"
-placeholder="What is your biggest growth challenge right now?"
-required
-></textarea>
-
-<textarea
-name="goals"
-placeholder="What would success look like over the next 12 months?"
-required
-></textarea>
-
-<label style="display:flex; gap:10px; align-items:flex-start; font-size:14px;">
-<input type="checkbox" name="consent" required style="width:auto; margin-top:4px;">
-<span>
-I agree to receive emails, phone calls, and text messages from LNL Solutions regarding my Growth Audit request.
-</span>
-</label>
-
-<button type="submit" class="btn primary">
-Request My Free Growth Audit
-</button>
-
-</form>
-
-</section>
-
-<section class="cta-section">
-<div class="container">
-
-<h2>Why Businesses Work With LNL Solutions</h2>
-
-<p>
-We do not just build websites. We build connected growth systems that help businesses capture leads, automate follow-up, track opportunities, and scale through better systems.
-</p>
-
-<a href="contact.html" class="btn primary">
-Speak With Our Team
-</a>
+      <div class="form-row-2">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+      <div class="form-row-2">
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="company" placeholder="Business Name" required>
+      </div>
+      <div class="form-row-2">
+        <input type="text" name="industry" placeholder="Industry" required>
+        <input type="url" name="website" placeholder="Website URL (if any)">
+      </div>
+      <div class="form-row-2">
+        <select name="revenue_range" required>
+          <option value="">Monthly Revenue</option>
+          <option>Under $10k</option>
+          <option>$10k to $25k</option>
+          <option>$25k to $50k</option>
+          <option>$50k to $100k</option>
+          <option>$100k+</option>
+        </select>
+        <select name="timeline" required>
+          <option value="">Timeline to start</option>
+          <option>Immediately</option>
+          <option>Within 30 days</option>
+          <option>Within 90 days</option>
+          <option>Just researching</option>
+        </select>
+      </div>
+      <textarea name="biggest_challenge" placeholder="What is your biggest growth challenge right now?" required></textarea>
+      <label class="consent-label">
+        <input type="checkbox" name="consent" required>
+        I agree to be contacted by LNL Solutions about my audit request.
+      </label>
+      <button type="submit" class="submit-btn">Request My Free Growth Audit</button>
+    </form>
+  </div>
 
 </div>
-</section>
 
 <footer class="site-footer">
-<p>© 2026 LNL Solutions</p>
+  <div><h3>LNL Solutions</h3><p>Technology. Automation. Growth.</p></div>
+  <div><p><a href="solutions.html">Solutions</a> &nbsp;|&nbsp; <a href="industries.html">Industries</a> &nbsp;|&nbsp; <a href="pricing.html">Pricing</a> &nbsp;|&nbsp; <a href="contact.html">Contact</a></p></div>
+  <div><p>2025 LNL Solutions. All rights reserved.</p></div>
 </footer>
-
 <script src="script.js"></script>
-
 </body>
 </html>
