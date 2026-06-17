@@ -154,7 +154,7 @@ window.addEventListener("scroll", () => {
     },
     {
       id: "question",
-      message: () => "Of course! You can email us at hello@lnlsolutions.cc or head to our contact page and we'll get back to you right away.",
+      message: () => "Of course! You can email us at ktrev@lnlsolutions.cc or head to our contact page and we'll get back to you right away.",
       type: "choice",
       choices: ["Got it, thanks!", "Book a call now"],
       next: (val) => val === "Book a call now" ? "book" : "done",
