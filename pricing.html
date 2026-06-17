@@ -19,8 +19,6 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', Arial, sans-serif; background: var(--deep); color: var(--white); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     a { text-decoration: none; color: inherit; }
-
-    /* HEADER */
     .site-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 6%; background: rgba(5,8,22,.92); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
     .logo { display: flex; align-items: center; gap: 12px; font-weight: 900; }
     .logo-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, var(--blue), var(--teal)); font-size: 13px; letter-spacing: .8px; }
@@ -30,64 +28,45 @@
     #mainNav a:hover { color: var(--blue2); }
     .header-cta { background: linear-gradient(135deg, var(--blue), var(--teal)); color: white; padding: 11px 20px; border-radius: 999px; font-weight: 800; font-size: 14px; white-space: nowrap; }
     .menu-toggle { display: none; background: var(--blue); color: white; border: 0; padding: 9px 12px; border-radius: 10px; font-size: 20px; cursor: pointer; }
-
-    /* HERO */
     .page-hero { text-align: center; padding: 80px 6% 60px; background: radial-gradient(circle at 20% 20%, rgba(37,99,235,.25), transparent 40%), radial-gradient(circle at 80% 10%, rgba(20,184,166,.18), transparent 40%), linear-gradient(135deg, #050816, #0B1020 60%, #111827); position: relative; overflow: hidden; }
     .page-hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
     .eyebrow { color: var(--teal); text-transform: uppercase; letter-spacing: 2.2px; font-size: 13px; font-weight: 900; margin-bottom: 16px; position: relative; }
     .page-hero h1 { font-family: 'Space Grotesk', Inter, sans-serif; font-size: clamp(36px, 5.5vw, 68px); letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px; position: relative; }
     .page-hero h1 span { background: linear-gradient(135deg, var(--blue2), var(--teal)); -webkit-background-clip: text; color: transparent; }
-    .page-hero p { color: var(--muted); font-size: 18px; max-width: 580px; margin: 0 auto; position: relative; }
-
-    /* PRICING TOGGLE */
+    .page-hero p { color: var(--muted); font-size: 18px; max-width: 600px; margin: 0 auto; position: relative; }
     .pricing-note { text-align: center; padding: 30px 6% 0; }
     .pricing-note p { color: var(--muted); font-size: 14px; }
     .pricing-note strong { color: var(--teal); }
-
-    /* PRICING CARDS */
     .pricing-section { padding: 60px 6% 80px; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
-
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1140px; margin: 0 auto; }
     .pricing-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 40px 32px; backdrop-filter: blur(12px); position: relative; transition: transform .2s, border-color .2s; display: flex; flex-direction: column; }
     .pricing-card:hover { transform: translateY(-4px); border-color: rgba(37,99,235,.4); }
     .pricing-card.popular { border-color: var(--teal); box-shadow: 0 0 60px rgba(20,184,166,.2); }
-
     .popular-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--blue), var(--teal)); color: white; font-size: 12px; font-weight: 800; padding: 5px 18px; border-radius: 999px; letter-spacing: 1px; white-space: nowrap; }
-
     .plan-name { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--teal); margin-bottom: 10px; }
     .plan-tagline { font-size: 15px; color: var(--muted); margin-bottom: 28px; line-height: 1.5; }
-
     .price-block { margin-bottom: 28px; }
     .price-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 4px; }
     .price-amount { font-family: 'Space Grotesk', Inter, sans-serif; font-size: 42px; font-weight: 700; color: var(--white); letter-spacing: -1px; }
-    .price-amount span { font-size: 18px; color: var(--muted); font-weight: 500; }
     .price-monthly { display: flex; align-items: baseline; gap: 6px; margin-top: 8px; }
     .price-monthly strong { font-size: 22px; font-weight: 800; color: var(--blue2); }
     .price-monthly em { font-size: 13px; color: var(--muted); font-style: normal; }
-
     .divider { height: 1px; background: var(--line); margin: 24px 0; }
-
     .features-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 16px; }
     .feature-list { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 32px; flex: 1; }
     .feature-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--white); line-height: 1.5; }
     .feature-list li::before { content: "✓"; color: var(--teal); font-weight: 900; flex-shrink: 0; margin-top: 1px; }
     .feature-list li.muted-feature { color: var(--muted); }
     .feature-list li.muted-feature::before { content: "—"; color: var(--line); }
-
     .best-for { background: rgba(37,99,235,.08); border: 1px solid rgba(37,99,235,.2); border-radius: 10px; padding: 12px 16px; font-size: 13px; color: var(--muted); margin-bottom: 24px; }
     .best-for strong { color: var(--blue2); display: block; margin-bottom: 3px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
-
     .plan-cta { display: block; text-align: center; padding: 15px; border-radius: 999px; font-weight: 800; font-size: 15px; transition: transform .2s, box-shadow .2s; }
     .plan-cta.primary { background: linear-gradient(135deg, var(--blue), var(--teal)); color: white; box-shadow: 0 0 30px rgba(37,99,235,.3); }
     .plan-cta.primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(37,99,235,.5); }
     .plan-cta.outline { border: 2px solid var(--line); color: var(--white); }
     .plan-cta.outline:hover { border-color: var(--blue2); color: var(--blue2); }
-
-    /* COMPARISON NOTE */
     .comparison-note { text-align: center; padding: 0 6% 60px; }
     .comparison-note p { color: var(--muted); font-size: 15px; max-width: 600px; margin: 0 auto; }
-
-    /* FAQ */
     .faq-section { padding: 80px 6%; background: var(--charcoal); }
     .faq-section h2 { font-family: 'Space Grotesk', Inter, sans-serif; font-size: clamp(28px, 4vw, 48px); letter-spacing: -1px; text-align: center; margin-bottom: 10px; }
     .faq-section h2 span { background: linear-gradient(135deg, var(--blue2), var(--teal)); -webkit-background-clip: text; color: transparent; }
@@ -96,8 +75,6 @@
     .faq-item { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 28px; }
     .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--white); }
     .faq-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
-
-    /* CTA */
     .cta-section { padding: 100px 6%; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(37,99,235,.2), transparent 55%); border-top: 1px solid var(--line); }
     .cta-section h2 { font-family: 'Space Grotesk', Inter, sans-serif; font-size: clamp(30px, 5vw, 58px); letter-spacing: -1.5px; margin-bottom: 20px; }
     .cta-section h2 span { background: linear-gradient(135deg, var(--blue2), var(--teal)); -webkit-background-clip: text; color: transparent; }
@@ -105,15 +82,10 @@
     .btn-primary { display: inline-block; background: linear-gradient(135deg, var(--blue), var(--teal)); color: white; padding: 18px 44px; border-radius: 999px; font-weight: 800; font-size: 17px; box-shadow: 0 0 40px rgba(37,99,235,.4); transition: transform .2s, box-shadow .2s; }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(37,99,235,.6); }
     .cta-note { margin-top: 14px; font-size: 13px; color: var(--muted); }
-
-    /* FOOTER */
     footer { padding: 32px 6%; border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--muted); }
     footer a { color: var(--blue2); }
-
-    /* REVEAL */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
     .revealed { opacity: 1; transform: none; }
-
     @media (max-width: 640px) {
       #mainNav { display: none; }
       .menu-toggle { display: block; }
@@ -133,9 +105,10 @@
     <a href="index.html">Home</a>
     <a href="solutions.html">Solutions</a>
     <a href="industries.html">Industries</a>
-    <a href="vsl.html">See It In Action</a>
     <a href="pricing.html">Pricing</a>
+    <a href="vsl.html">See It In Action</a>
     <a href="growth-audit.html">Growth Audit</a>
+    <a href="contact.html">Contact</a>
   </nav>
   <a href="growth-audit.html" class="header-cta">Free Growth Audit →</a>
 </header>
@@ -143,7 +116,7 @@
 <section class="page-hero">
   <p class="eyebrow">Simple, Transparent Pricing</p>
   <h1>One System. <span>One Monthly Fee.</span><br>No Surprises.</h1>
-  <p>Every package includes a one-time setup retainer to build your system and a monthly fee to run, manage, and optimize it.</p>
+  <p>Every package includes a one-time setup retainer to build your complete system — website, Google presence, LinkedIn, SEO, automation, and CRM — plus a monthly fee to manage and grow it.</p>
 </section>
 
 <div class="pricing-note reveal">
@@ -156,10 +129,10 @@
     <!-- STARTER -->
     <div class="pricing-card reveal">
       <div class="plan-name">Starter Growth System</div>
-      <div class="plan-tagline">Get your foundation in place and start capturing leads automatically.</div>
+      <div class="plan-tagline">Your full digital foundation built, optimized, and running — ready to capture and convert leads.</div>
 
       <div class="price-block">
-        <div class="price-label">One-Time Setup</div>
+        <div class="price-label">One-Time Setup Retainer</div>
         <div class="price-amount">$1,500</div>
         <div class="price-monthly">
           <strong>$497</strong>
@@ -172,21 +145,23 @@
       <div class="features-label">What's Included</div>
       <ul class="feature-list">
         <li>Professional website (up to 5 pages)</li>
-        <li>On-page SEO + Google Business setup</li>
+        <li>Google Business Profile setup & optimization</li>
+        <li>On-page SEO + local search setup</li>
+        <li>LinkedIn profile optimization</li>
         <li>Lead capture form integration</li>
         <li>Basic CRM setup and pipeline</li>
         <li>AI email + SMS follow-up sequences</li>
         <li>Monthly performance report</li>
-        <li>LinkedIn profile optimization</li>
         <li class="muted-feature">AI chatbot and lead qualification</li>
         <li class="muted-feature">Appointment booking system</li>
         <li class="muted-feature">VSL funnel page</li>
+        <li class="muted-feature">Google Maps ranking strategy</li>
         <li class="muted-feature">Dedicated account manager</li>
       </ul>
 
       <div class="best-for">
         <strong>Best For</strong>
-        Small businesses under $25k/mo ready to build their first real lead system.
+        Small businesses under $25k/mo ready to build their first real digital presence and lead system.
       </div>
 
       <a href="growth-audit.html" class="plan-cta outline">Get Started →</a>
@@ -196,10 +171,10 @@
     <div class="pricing-card popular reveal">
       <div class="popular-badge">★ MOST POPULAR</div>
       <div class="plan-name">Growth Accelerator</div>
-      <div class="plan-tagline">A complete AI-powered growth engine for businesses ready to scale.</div>
+      <div class="plan-tagline">A complete AI-powered growth engine with a full digital presence overhaul for businesses ready to dominate.</div>
 
       <div class="price-block">
-        <div class="price-label">One-Time Setup</div>
+        <div class="price-label">One-Time Setup Retainer</div>
         <div class="price-amount">$3,500</div>
         <div class="price-monthly">
           <strong>$997</strong>
@@ -212,14 +187,16 @@
       <div class="features-label">Everything in Starter, Plus</div>
       <ul class="feature-list">
         <li>Full website revamp (up to 10 pages)</li>
+        <li>Google Business Profile full revamp</li>
+        <li>Google Maps ranking strategy</li>
         <li>Advanced local SEO + keyword strategy</li>
+        <li>LinkedIn profile revamp + content strategy</li>
         <li>AI chatbot + lead qualification system</li>
         <li>Full CRM buildout + automation workflows</li>
         <li>Appointment booking system</li>
         <li>Multi-touch follow-up (email, SMS, voicemail)</li>
         <li>VSL funnel page</li>
         <li>Monthly analytics dashboard</li>
-        <li>LinkedIn profile revamp + content strategy</li>
         <li>Bi-weekly strategy calls</li>
         <li class="muted-feature">Cold outreach system</li>
         <li class="muted-feature">Dedicated account manager</li>
@@ -227,7 +204,7 @@
 
       <div class="best-for">
         <strong>Best For</strong>
-        Established service businesses doing $25k–$100k/mo ready to dominate locally.
+        Established service businesses doing $25k–$100k/mo ready to dominate locally and online.
       </div>
 
       <a href="growth-audit.html" class="plan-cta primary">Get Started →</a>
@@ -236,10 +213,10 @@
     <!-- ELITE -->
     <div class="pricing-card reveal">
       <div class="plan-name">Elite AI Operating System</div>
-      <div class="plan-tagline">Full-stack AI infrastructure for serious businesses ready to scale fast.</div>
+      <div class="plan-tagline">Full-stack AI infrastructure and a complete digital presence takeover for serious businesses scaling fast.</div>
 
       <div class="price-block">
-        <div class="price-label">One-Time Setup</div>
+        <div class="price-label">One-Time Setup Retainer</div>
         <div class="price-amount">$7,500</div>
         <div class="price-monthly">
           <strong>$1,997</strong>
@@ -251,22 +228,25 @@
 
       <div class="features-label">Everything in Growth, Plus</div>
       <ul class="feature-list">
-        <li>Complete digital presence overhaul</li>
+        <li>Complete website & digital presence overhaul</li>
+        <li>Google Business + Google Maps dominance strategy</li>
+        <li>Technical SEO audit + backlink strategy</li>
+        <li>Google Ads readiness & campaign setup</li>
+        <li>LinkedIn company page setup + optimization</li>
+        <li>LinkedIn cold outreach system</li>
         <li>Custom software or client portal</li>
         <li>AI-powered lead scoring and routing</li>
         <li>Full sales pipeline automation</li>
-        <li>Cold outreach system (email + LinkedIn)</li>
+        <li>Cold email outreach system</li>
         <li>Reputation management system</li>
-        <li>LinkedIn company page setup + optimization</li>
         <li>Social media content system</li>
         <li>Dedicated account manager</li>
-        <li>Weekly strategy calls</li>
-        <li>Priority support (same-day response)</li>
+        <li>Weekly strategy calls + priority support</li>
       </ul>
 
       <div class="best-for">
         <strong>Best For</strong>
-        Scaling businesses doing $100k+/mo who want a complete AI-powered operation.
+        Scaling businesses doing $100k+/mo who want to own their market online and offline.
       </div>
 
       <a href="growth-audit.html" class="plan-cta outline">Get Started →</a>
@@ -279,7 +259,6 @@
   <p>Not sure which package is right for you? Request a free Growth Audit and we'll recommend the exact fit for your business, your goals, and your budget.</p>
 </div>
 
-<!-- FAQ -->
 <section class="faq-section">
   <p class="eyebrow" style="text-align:center; margin-bottom:14px;">Common Questions</p>
   <h2>Everything You <span>Need To Know</span></h2>
@@ -287,42 +266,41 @@
 
   <div class="faq-grid reveal">
     <div class="faq-item">
-      <h3>What is the one-time setup fee for?</h3>
-      <p>This covers the full build of your system — website, CRM, automation workflows, integrations, and everything else we configure before going live. It's a one-time investment to build your foundation right.</p>
+      <h3>What does the setup retainer cover?</h3>
+      <p>Everything built before you go live — your website, Google Business setup, LinkedIn revamp, SEO foundation, CRM, automation workflows, and all integrations. It's a one-time investment to build your complete digital infrastructure right.</p>
     </div>
     <div class="faq-item">
       <h3>What does the monthly fee cover?</h3>
-      <p>Ongoing management, optimization, reporting, strategy calls, support, and continuous improvements to your system as your business grows. We stay active in your account — not just collect a check.</p>
+      <p>Ongoing management, optimization, reporting, strategy calls, content updates, and continuous improvements. We stay active in your account every single month — not just collect a check.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What exactly is a "full digital presence revamp"?</h3>
+      <p>We rebuild and optimize your website, Google Business Profile, Google Maps presence, LinkedIn profile and company page, on-page SEO, and local search strategy — so your business shows up and converts everywhere prospects look.</p>
     </div>
     <div class="faq-item">
       <h3>Are there any contracts?</h3>
-      <p>We ask for a 3-month minimum to give the system enough time to show results. After that, you can cancel anytime with 30 days notice. No lock-in, no tricks.</p>
+      <p>We ask for a 3-month minimum to give the system time to show results. After that, cancel anytime with 30 days notice. No lock-in, no tricks.</p>
     </div>
     <div class="faq-item">
       <h3>How long does setup take?</h3>
-      <p>Most Starter systems are live within 2 weeks. Growth Accelerator typically takes 3–4 weeks. Elite systems are 4–6 weeks depending on scope. We move fast.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Do I need any technical experience?</h3>
-      <p>None. We handle everything — you just answer our questions, review the work, and approve it. Most clients never touch the backend at all.</p>
+      <p>Most Starter systems are live in 2 weeks. Growth Accelerator takes 3–4 weeks. Elite is 4–6 weeks depending on scope. We move fast.</p>
     </div>
     <div class="faq-item">
       <h3>Can I upgrade my package later?</h3>
-      <p>Absolutely. Many clients start on Starter and move to Growth Accelerator once they see the results. We'll credit a portion of your existing setup fee toward the upgrade.</p>
+      <p>Absolutely. Many clients start on Starter and move up as they grow. We'll credit a portion of your existing setup fee toward the upgrade.</p>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section reveal">
   <h2>Not Sure Where To Start?<br><span>Let Us Show You.</span></h2>
-  <p>Book a free Growth Audit and we'll tell you exactly which package fits your business and where you're leaving money on the table.</p>
+  <p>Book a free Growth Audit and we'll tell you exactly which package fits your business and where you're leaving money on the table right now.</p>
   <a href="growth-audit.html" class="btn-primary">Request Your Free Growth Audit →</a>
   <p class="cta-note">Free. No pressure. No commitment. Just clarity.</p>
 </section>
 
 <footer>
-  <p>© 2025 LNL Solutions. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms</a></p>
+  <p>© 2025 LNL Solutions. All rights reserved. &nbsp;|&nbsp; <a href="solutions.html">Solutions</a> &nbsp;|&nbsp; <a href="industries.html">Industries</a> &nbsp;|&nbsp; <a href="pricing.html">Pricing</a> &nbsp;|&nbsp; <a href="growth-audit.html">Growth Audit</a> &nbsp;|&nbsp; <a href="contact.html">Contact</a></p>
 </footer>
 
 <script>
