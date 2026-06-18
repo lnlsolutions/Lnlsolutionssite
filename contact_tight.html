@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | LNL Solutions</title>
+  <meta name="description" content="Get in touch with LNL Solutions. We build websites, AI automation, SEO, LinkedIn, and lead generation systems for service businesses." />
+  <link rel="canonical" href="https://lnlsolutions.cc/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="logo">
+    <span class="logo-mark">LNL</span>
+    <span class="logo-text">LNL <b>Solutions</b></span>
+  </a>
+  <button class="menu-toggle" onclick="document.getElementById('mainNav').style.display = document.getElementById('mainNav').style.display === 'flex' ? 'none' : 'flex'" aria-label="Toggle menu">☰</button>
+  <nav id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="industries.html">Industries</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="vsl.html">See It In Action</a>
+    <a href="growth-audit.html">Growth Audit</a>
+  </nav>
+  <a href="growth-audit.html" class="header-cta">Free Audit</a>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Contact Us</p>
+    <h1>Let's Build Something.</h1>
+    <p>Tell us about your business and what you want to fix. We will respond within one business day.</p>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="contact-copy">
+    <p class="eyebrow">Get In Touch</p>
+    <h2>Start Here.</h2>
+    <p>Email us directly at <a href="mailto:hello@lnlsolutions.cc" style="color:#60A5FA; font-weight:700;">hello@lnlsolutions.cc</a> or fill out the form.</p>
+    <div style="margin-top:28px; display:flex; flex-direction:column; gap:8px;">
+      <p style="color:#CBD5E1; font-size:14px;">Website and Google Presence</p>
+      <p style="color:#CBD5E1; font-size:14px;">SEO and Local Search</p>
+      <p style="color:#CBD5E1; font-size:14px;">LinkedIn Optimization</p>
+      <p style="color:#CBD5E1; font-size:14px;">AI Automation and CRM</p>
+      <p style="color:#CBD5E1; font-size:14px;">Lead Generation and Cold Outreach</p>
+      <p style="color:#CBD5E1; font-size:14px;">Custom Software</p>
+    </div>
+    <a href="pricing.html" style="display:inline-block; margin-top:24px; color:#14B8A6; font-size:14px; font-weight:700;">View pricing packages</a>
+  </div>
+
+  <form name="contact" method="POST" data-netlify="true" action="/thank-you.html" class="contact-form">
+    <input type="hidden" name="form-name" value="contact">
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+    </div>
+    <div class="form-row">
+      <input type="text" name="business" placeholder="Business Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+    </div>
+    <div class="form-row">
+      <select name="service">
+        <option value="">What do you need?</option>
+        <option>Website Development</option>
+        <option>SEO and Google</option>
+        <option>LinkedIn Optimization</option>
+        <option>AI Automation and CRM</option>
+        <option>Lead Generation</option>
+        <option>Cold Email and Outreach</option>
+        <option>Full Growth System</option>
+        <option>Custom Software</option>
+      </select>
+      <select name="budget">
+        <option value="">Budget range</option>
+        <option>Under $2,500</option>
+        <option>$2,500 to $5,000</option>
+        <option>$5,000 to $10,000</option>
+        <option>$10,000 plus</option>
+      </select>
+    </div>
+    <textarea name="message" placeholder="Tell us what you are trying to accomplish..." required></textarea>
+    <button type="submit" class="btn primary">Send Message</button>
+  </form>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Not Ready Yet?</h2>
+    <p>Start with a free Growth Audit. No pressure, no commitment.</p>
+    <a href="growth-audit.html" class="btn primary">Request Free Growth Audit</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div><h3>LNL Solutions</h3><p>Technology. Automation. Growth.</p></div>
+  <div><p><a href="solutions.html">Solutions</a> &nbsp;|&nbsp; <a href="industries.html">Industries</a> &nbsp;|&nbsp; <a href="pricing.html">Pricing</a> &nbsp;|&nbsp; <a href="growth-audit.html">Growth Audit</a> &nbsp;|&nbsp; <a href="contact.html">Contact</a></p></div>
+  <div><p>2025 LNL Solutions. All rights reserved.</p></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
