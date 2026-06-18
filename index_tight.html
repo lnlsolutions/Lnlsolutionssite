@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LNL Solutions | AI Growth Systems For Service Businesses</title>
+  <meta name="description" content="LNL Solutions builds AI-powered growth systems that help service businesses capture more leads, automate follow-up, and book more qualified appointments." />
+  <meta property="og:title" content="LNL Solutions | Stop Losing Leads. Start Closing More." />
+  <meta property="og:description" content="AI-powered growth systems for service businesses. Website, SEO, LinkedIn, CRM, and automation — done for you." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://lnlsolutions.cc" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* TIGHT OVERRIDES */
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; margin-top: 48px; }
+    .prob-card { padding: 32px 28px; border: 1px solid rgba(148,163,184,.1); background: rgba(15,23,42,.5); }
+    .prob-num { font-size: 11px; font-weight: 900; letter-spacing: 2px; color: #14B8A6; margin-bottom: 12px; }
+    .prob-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .prob-card p { font-size: 13px; color: #94A3B8; line-height: 1.5; }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2px; margin-top: 48px; }
+    .step-card { padding: 28px 24px; border: 1px solid rgba(148,163,184,.1); background: rgba(15,23,42,.5); }
+    .step-num { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: rgba(96,165,250,.25); margin-bottom: 10px; }
+    .step-card h3 { font-size: 15px; font-weight: 700; color: #F8FAFC; }
+
+    .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; margin-top: 48px; }
+    .offer-card { padding: 36px 32px; border: 1px solid rgba(148,163,184,.12); background: rgba(15,23,42,.6); }
+    .offer-card.featured { border-color: #14B8A6; background: rgba(20,184,166,.06); }
+    .offer-tag { font-size: 11px; font-weight: 900; letter-spacing: 2px; color: #14B8A6; margin-bottom: 14px; }
+    .offer-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .offer-card p { font-size: 13px; color: #94A3B8; line-height: 1.5; margin-bottom: 16px; }
+    .offer-price { font-size: 13px; font-weight: 800; color: #60A5FA; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 2px; margin-top: 48px; max-width: 780px; margin-left: auto; margin-right: auto; }
+    .faq-item { padding: 24px 28px; border: 1px solid rgba(148,163,184,.1); background: rgba(15,23,42,.5); }
+    .faq-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .faq-item p { font-size: 13px; color: #94A3B8; line-height: 1.6; }
+
+    .section-tight { padding: 80px 6%; }
+    .section-tight .sh { text-align: center; margin-bottom: 0; }
+    .section-tight .sh .eyebrow { margin-bottom: 10px; }
+    .section-tight .sh h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px,4vw,52px); letter-spacing:-1.2px; line-height:1.05; }
+    .section-tight .sh h2 span { background: linear-gradient(135deg,#60A5FA,#14B8A6); -webkit-background-clip:text; color:transparent; }
+    .section-tight .sh p { color:#94A3B8; font-size:16px; max-width:520px; margin:12px auto 0; }
+
+    .proof-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-top: 48px; }
+    .proof-item { padding: 28px 40px; border: 1px solid rgba(148,163,184,.1); background: rgba(15,23,42,.5); text-align: center; min-width: 160px; }
+    .proof-item strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #60A5FA; }
+    .proof-item span { font-size: 12px; color: #94A3B8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+    .final-cta { padding: 100px 6%; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(37,99,235,.18), transparent 55%); border-top: 1px solid rgba(148,163,184,.1); }
+    .final-cta h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px,5vw,60px); letter-spacing:-1.5px; margin-bottom:16px; }
+    .final-cta h2 span { background: linear-gradient(135deg,#60A5FA,#14B8A6); -webkit-background-clip:text; color:transparent; }
+    .final-cta p { color:#94A3B8; font-size:16px; max-width:460px; margin:0 auto 32px; }
+    .cta-btn { display:inline-block; background:linear-gradient(135deg,#2563EB,#14B8A6); color:white; padding:16px 40px; border-radius:999px; font-weight:800; font-size:16px; box-shadow:0 0 40px rgba(37,99,235,.35); }
+    .cta-note { margin-top:12px; font-size:12px; color:#475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">
+    <span class="logo-mark">LNL</span>
+    <span class="logo-text">LNL <b>Solutions</b></span>
+  </a>
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+  <nav id="mainNav">
+    <a href="solutions.html">Solutions</a>
+    <a href="industries.html">Industries</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="vsl.html">See It In Action</a>
+    <a href="growth-audit.html">Growth Audit</a>
+  </nav>
+  <a href="growth-audit.html" class="header-cta">Free Audit</a>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero reveal">
+  <div class="hero-copy">
+    <p class="eyebrow">AI Growth Systems For Service Businesses</p>
+    <h1>Stop Losing Leads.<br><span>Start Closing More.</span></h1>
+    <p class="hero-text">We build the complete system — website, Google, LinkedIn, CRM, and AI automation — so every lead gets captured and followed up automatically.</p>
+    <div class="hero-actions">
+      <a href="growth-audit.html" class="btn primary">Get Your Free Growth Audit</a>
+      <a href="vsl.html" class="btn secondary">See How It Works</a>
+    </div>
+    <div class="trust-row">
+      <span>Website</span>
+      <span>SEO + Google</span>
+      <span>LinkedIn</span>
+      <span>CRM + AI</span>
+      <span>Lead Capture</span>
+    </div>
+  </div>
+  <div class="hero-dashboard">
+    <div class="dashboard-top">
+      <span>Growth System</span>
+      <span class="live-dot">Live</span>
+    </div>
+    <div class="metric-grid">
+      <div><small>Lead Response</small><strong>Instant</strong></div>
+      <div><small>Missed Leads</small><strong>Zero</strong></div>
+      <div><small>Follow-Up</small><strong>Automated</strong></div>
+      <div><small>Appointments</small><strong>Booked</strong></div>
+    </div>
+    <div class="automation-flow">
+      <div>New Lead</div><span>→</span>
+      <div>CRM</div><span>→</span>
+      <div>AI Follow-Up</div><span>→</span>
+      <div>Booked</div>
+    </div>
+    <div class="dashboard-note">Every lead captured, qualified, and followed up — 24/7.</div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section-tight reveal">
+  <div class="sh">
+    <p class="eyebrow">The Real Problem</p>
+    <h2>You Don't Need More Traffic.<br><span>You Need A Better System.</span></h2>
+    <p>Most businesses lose leads they already have — not because they don't deliver, but because nothing catches them.</p>
+  </div>
+  <div class="problem-grid">
+    <div class="prob-card">
+      <div class="prob-num">01</div>
+      <h3>Leads Slip Through</h3>
+      <p>Forms and calls go unanswered when follow-up is manual.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-num">02</div>
+      <h3>Slow Response Loses Deals</h3>
+      <p>Prospects contact multiple businesses. First to respond wins.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-num">03</div>
+      <h3>No Pipeline Visibility</h3>
+      <p>Without a CRM, leads live in texts, emails, and memory.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-num">04</div>
+      <h3>Invisible Online</h3>
+      <p>A weak website, no Google presence, and no LinkedIn means your best prospects never find you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STATS -->
+<div class="proof-row reveal" style="padding: 0 6%;">
+  <div class="proof-item"><strong>Instant</strong><span>Lead Response</span></div>
+  <div class="proof-item"><strong>Zero</strong><span>Missed Leads</span></div>
+  <div class="proof-item"><strong>More</strong><span>Booked Appointments</span></div>
+  <div class="proof-item"><strong>Full</strong><span>Pipeline Visibility</span></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section-tight reveal">
+  <div class="sh">
+    <p class="eyebrow">How It Works</p>
+    <h2>From Growth Audit<br><span>To Live System.</span></h2>
+    <p>We handle everything. You review and approve.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card"><div class="step-num">01</div><h3>Request A Free Growth Audit</h3></div>
+    <div class="step-card"><div class="step-num">02</div><h3>We Audit Your Business</h3></div>
+    <div class="step-card"><div class="step-num">03</div><h3>You Get A Growth Plan</h3></div>
+    <div class="step-card"><div class="step-num">04</div><h3>We Build Everything</h3></div>
+    <div class="step-card"><div class="step-num">05</div><h3>We Optimize Every Month</h3></div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="section-tight reveal" style="background: rgba(15,23,42,.3);">
+  <div class="sh">
+    <p class="eyebrow">Packages</p>
+    <h2>One System.<br><span>Three Levels.</span></h2>
+    <p>Every package includes website, Google, LinkedIn, SEO, CRM, and automation.</p>
+  </div>
+  <div class="offers-grid">
+    <div class="offer-card">
+      <div class="offer-tag">STARTER</div>
+      <h3>Growth Foundation</h3>
+      <p>Your full digital presence built and running — website, Google, LinkedIn, SEO, CRM, and AI follow-up.</p>
+      <div class="offer-price">From $1,500 + $497/mo</div>
+    </div>
+    <div class="offer-card featured">
+      <div class="offer-tag">MOST POPULAR</div>
+      <h3>Growth Accelerator</h3>
+      <p>Full revamp of your website, Google presence, LinkedIn, and a complete AI-powered lead engine.</p>
+      <div class="offer-price">From $3,500 + $997/mo</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-tag">ELITE</div>
+      <h3>AI Operating System</h3>
+      <p>Complete digital takeover — custom software, cold outreach, Google Ads readiness, and a dedicated account manager.</p>
+      <div class="offer-price">From $7,500 + $1,997/mo</div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:36px;">
+    <a href="pricing.html" class="cta-btn" style="font-size:14px; padding:12px 28px;">See Full Pricing</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-tight reveal">
+  <div class="sh">
+    <p class="eyebrow">FAQ</p>
+    <h2>Quick <span>Answers.</span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3>Do you work with all industries?</h3>
+      <p>Yes. Fitness, home services, beauty, restaurants, real estate, finance, professional services, and more.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is this different from a marketing agency?</h3>
+      <p>We build infrastructure — website, CRM, automation, LinkedIn, SEO — not just ads. The system works whether or not you're running campaigns.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does setup take?</h3>
+      <p>Most systems are live in 2 to 4 weeks depending on the package.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I need any technical skills?</h3>
+      <p>None. We handle everything. You review and approve.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Where do I start?</h3>
+      <p>Request a free Growth Audit. We review your business and tell you exactly what you need.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta reveal">
+  <h2>Ready To Build<br><span>Your System?</span></h2>
+  <p>Free audit. No pressure. Just a clear look at where your business is leaving money on the table.</p>
+  <a href="growth-audit.html" class="cta-btn">Request Your Free Growth Audit</a>
+  <p class="cta-note">Free. No commitment. Results in days.</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div><h3>LNL Solutions</h3><p>Technology. Automation. Growth.</p></div>
+  <div>
+    <p><a href="solutions.html">Solutions</a> &nbsp;|&nbsp; <a href="industries.html">Industries</a> &nbsp;|&nbsp; <a href="pricing.html">Pricing</a> &nbsp;|&nbsp; <a href="vsl.html">See It In Action</a> &nbsp;|&nbsp; <a href="growth-audit.html">Growth Audit</a> &nbsp;|&nbsp; <a href="contact.html">Contact</a></p>
+  </div>
+  <div><p>2025 LNL Solutions. All rights reserved.</p></div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('revealed'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  function toggleMenu() {
+    const nav = document.getElementById('mainNav');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+  }
+</script>
+</body>
+</html>
